@@ -1,0 +1,37 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The difference is who owns the control flow: in a workflow, code decides the order of the steps ahead of time; in an agent, the model decides the next step as it goes. Both can use tools (a), both can call the model several times (c), and how they are triggered (d) is unrelated."
+    },
+    {
+      "id": "q2",
+      "answer": "d",
+      "rationale": "The code fixes the sequence and the model only writes text at one step, so this is a workflow. Using a model and a search tool (a, b) does not make a system an agent; the model would have to choose the steps. In a workflow the model does not decide when to stop (c)."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "When the steps are known and always the same, fixed code is cheaper, faster and more predictable than letting a model decide them. Workflows are weaker, not stronger, on unplanned requests (c); a model can still be used inside a workflow (b); and tool count does not separate the two (d)."
+    },
+    {
+      "id": "q4",
+      "answer": "agent",
+      "accepted": ["an agent", "agent.", "it is an agent", "agentic"],
+      "rationale": "The model chooses the next step based on earlier tool results and the steps cannot be listed in advance, so the model owns the control flow: an agent. Answering workflow shows the idea that using tools or a clear goal is enough to make a fixed sequence."
+    },
+    {
+      "id": "q5",
+      "answer": "c",
+      "rationale": "A fixed workflow has a predictable number of model calls because no model call is spent choosing or repeating steps, which makes cost per request easy to estimate and cap. Workflows can use any model size (a), many include model calls (b), and nothing about a workflow caches answers (d)."
+    },
+    {
+      "id": "q6",
+      "answer": "workflow",
+      "accepted": ["a workflow", "workflow.", "it is a workflow", "fixed workflow"],
+      "rationale": "Code fixes the order of the steps, and the model only does one task inside a step, so it is a workflow. A model call inside a step does not hand it the control flow. Answering agent shows the belief that any use of a language model makes a system an agent."
+    }
+  ]
+}

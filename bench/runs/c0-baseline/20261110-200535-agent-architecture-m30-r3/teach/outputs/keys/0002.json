@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "a",
+      "rationale": "The model keeps nothing between calls; the program resends the history each time. Options b and c treat the model as having its own memory, and d treats the window as permanent."
+    },
+    {
+      "id": "q2",
+      "answer": 4650,
+      "tolerance": 0,
+      "rationale": "Call 1 sends 2,000 + 100 = 2,100. Call 2 sends those plus the 50-token request and 400-token result: 2,550. Total 4,650. An answer of 2,550 counts only the last call; 2,500 or 4,600 forgets part of the history."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "Memory across sessions needs storage outside the model, read back into the window by the program or a tool. A larger window or an old chat does not persist, and shared instructions cannot hold each student's data."
+    },
+    {
+      "id": "q4",
+      "answer": "It costs tokens on every call and a bloated context makes the model recall worse; retrieve only the relevant page instead.",
+      "accepted": [
+        "it would be expensive because every call pays for all the manuals",
+        "too many tokens on every call",
+        "context rot: too much context makes the model less accurate",
+        "it would not fit in the context window",
+        "the manuals might not fit in the window and would cost tokens on every call"
+      ],
+      "rationale": "Any of cost on every call, worse recall in a large context, or exceeding the window is a valid reason. The tokens are resent on every step."
+    },
+    {
+      "id": "q5",
+      "answer": "b",
+      "rationale": "This is compaction: summarize the context, keeping decisions and open problems, and start a fresh window with the summary. The other options lose the instructions or the progress."
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "duration_api_ms": 157607,
+  "stop_reason": "end_turn",
+  "session_id": "e5d2c471-a6e6-4f4a-9173-96d98c372ae6",
+  "total_cost_usd": 0.5359662999999999,
+  "usage": {
+    "input_tokens": 20,
+    "cache_creation_input_tokens": 62222,
+    "cache_read_input_tokens": 402416,
+    "output_tokens": 21108,
+    "output_tokens_details": {
+      "thinking_tokens": 1218
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 62222,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 605,
+        "cache_read_input_tokens": 70695,
+        "cache_creation_input_tokens": 2163,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2163
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 20,
+      "outputTokens": 21108,
+      "cacheReadInputTokens": 402416,
+      "cacheCreationInputTokens": 62222,
+      "webSearchRequests": 0,
+      "costUSD": 0.5002496000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1218,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 62222,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 40642,
+      "outputTokens": 3305,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 3,
+      "costUSD": 0.0357167,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1339,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 24,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I've written the 30-minute lesson on O3, a five-item quiz with its key, and a cheat sheet. I didn't open the lesson in a browser or open any of its links, and I haven't measured its length. By my estimate it runs about 3,500 words, which would fit the 30-minute bench range (2,700 to 6,750).\n\n**Lesson: `lessons/0001-context-and-memory-in-an-agent.html`.** By the end, you can decide where each piece of the makerspace assistant's information lives: in the context, in a saved note, or in a searchable library. It covers:\n- **Context window:** what the model sees on a call, and why you pay for it.\n- **Between steps:** the program re-sends the whole history on every call, with a worked count of input tokens.\n- **Full windows:** trimming, compaction and lean tool results.\n- **Between sessions:** notes as memory.\n- **Retrieval:** searching the manuals for the right chunk.\n- **Practice:** a worked example for a 3D printer request, then one for you to do on a vinyl cutter request.\n\nIt also has four figures and a check question in each section.\n\n**Quiz 0002** is ready when you want it, and the key is stored with it. Ask me for it in the chat.\n\n**Sources:** Anthropic's context-engineering post is the primary source. I got its content from search summaries and didn't open the full text. The \"Lost in the Middle\" paper and a context-window explainer are also cited, and all three are in `RESOURCES.md`. No community link was found, so the lesson points you to the makerspace staff.\n\n**Gap:** I haven't read any provider's pricing or prompt-caching documentation, so that's the next thing to look up for your budget numbers.\n\nAsk me anything about the lesson. Do you want a follow-up lesson on writing tool descriptions for `search_manuals` and `save_note`?",
+  "ttft_ms": 1437,
+  "type": "result",
+  "duration_ms": 145271,
+  "uuid": "ce5aecb5-9d61-40f7-9c31-f43f95ae5fcb",
+  "ttft_stream_ms": 1087,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 1087,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 20,
+      "outputTokens": 21108,
+      "cacheReadInputTokens": 402416,
+      "cacheCreationInputTokens": 62222,
+      "webSearchRequests": 0,
+      "costUSD": 0.5002496000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1218,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 62222,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 40642,
+      "outputTokens": 3305,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 3,
+      "costUSD": 0.0357167,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1339,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-16T13:12:30.737Z"
+}

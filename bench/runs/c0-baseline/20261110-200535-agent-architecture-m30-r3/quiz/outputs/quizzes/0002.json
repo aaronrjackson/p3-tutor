@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "What mainly separates a workflow from an agent?",
+      "options": [
+        {"id": "a", "text": "How large the model is and how many tools it may call"},
+        {"id": "b", "text": "Whether code or the model decides each next step at run time"},
+        {"id": "c", "text": "Whether a request makes more than one call to the model"},
+        {"id": "d", "text": "Whether the final answer must follow a fixed output format"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your assistant's code always runs these steps. (1) A model call labels the student's question \"booking\" or \"manual\". (2) The code runs check_calendar for a booking label, or search_manuals for a manual label. (3) A second model call writes the reply from the tool's result. Who owns the control flow here?",
+      "options": [
+        {"id": "a", "text": "The model, because it calls tools and writes the final reply"},
+        {"id": "b", "text": "The model, because it chooses between two different tools"},
+        {"id": "c", "text": "The code, because the steps and branches are fixed in advance"},
+        {"id": "d", "text": "The student, because the question they type picks the branch"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which part of the makerspace assistant is the best candidate for a fixed workflow rather than an agent?",
+      "options": [
+        {"id": "a", "text": "Booking a slot: check training, check calendar, reserve, then confirm, in that order every time"},
+        {"id": "b", "text": "Answering a vague question that may need several manuals and some follow-up searches"},
+        {"id": "c", "text": "Working out why a machine failed from a student's rambling description of symptoms"},
+        {"id": "d", "text": "Comparing two manuals that disagree about a setting and deciding which one to trust"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In a workflow, what decides which step runs next? Answer in a few words."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "For one sub-task, which is the strongest reason to choose an agent over a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "It will cost less per request than a fixed sequence of calls"},
+        {"id": "b", "text": "It removes the need for a step limit or other stopping rule"},
+        {"id": "c", "text": "It makes the behavior more predictable and easier to test"},
+        {"id": "d", "text": "The steps needed cannot be known before seeing the request"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Your sponsor's model budget is $12.00. Treat every model call as costing $0.02. A fixed workflow for answering a manual question always makes exactly 3 model calls. How many manual questions can the workflow answer before the budget is used up?",
+      "unit": "questions"
+    }
+  ]
+}

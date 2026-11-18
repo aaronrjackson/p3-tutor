@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 12433,
+  "stop_reason": "end_turn",
+  "session_id": "9a06a910-5b11-4625-a98c-ca1f9e787b82",
+  "total_cost_usd": 0.11073050000000001,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 22692,
+    "cache_read_input_tokens": 65205,
+    "output_tokens": 1343,
+    "output_tokens_details": {
+      "thinking_tokens": 129
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22692,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 545,
+        "cache_read_input_tokens": 32917,
+        "cache_creation_input_tokens": 411,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 411
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1343,
+      "cacheReadInputTokens": 65205,
+      "cacheCreationInputTokens": 22692,
+      "webSearchRequests": 0,
+      "costUSD": 0.11073050000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 129,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 22692,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Neither. The premise isn't true: more agents don't always give better results, so \"five or ten?\" is the wrong question.\n\nEach extra agent adds three costs:\n\n- **Tokens:** every agent has its own context, and agents pass text to each other. Each handoff is paid for again. With a small sponsor budget, that adds up quickly.\n- **Lost information:** when agent A summarizes for agent B, details drop out. The detail that gets dropped is often the one that mattered.\n- **More ways to fail:** the agents can disagree, repeat work or wait on each other. You also have more to debug before the design review.\n\nHere is a concrete case. A student asks, \"Can I use the laser cutter Thursday at 3?\" A single agent can do this. It searches the manual for the training requirement, checks the calendar and books the slot. That takes three tool calls in one loop. Splitting it into a manual agent, a calendar agent, a booking agent and a manager agent doesn't make any step smarter. It just adds handoffs.\n\nSplitting starts to pay off when:\n\n- one agent's context would get too large or cluttered, or\n- the subtasks are independent and could run in parallel, or\n- the subtasks need very different tools or instructions.\n\nYour assistant has three tools and a short task. Start with one agent, and make the fixed steps (such as \"check training status, then book\") a workflow. Add a second agent only after you see a measured failure that splitting would fix.\n\nI haven't covered workflows versus agents or multi-agent systems with you yet. I can teach that as a lesson, using your makerspace assistant as the running example.\n\nTo check this landed: what would the extra agents cost you on that Thursday laser-cutter request?",
+  "ttft_ms": 1292,
+  "type": "result",
+  "duration_ms": 12589,
+  "uuid": "716d10f1-940c-4cd9-aec9-638d3f61d35b",
+  "ttft_stream_ms": 1178,
+  "time_to_request_ms": 100,
+  "first_content_frame_ms": 1178,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1343,
+      "cacheReadInputTokens": 65205,
+      "cacheCreationInputTokens": 22692,
+      "webSearchRequests": 0,
+      "costUSD": 0.11073050000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 129,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 22692,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-16T13:12:30.737Z"
+}

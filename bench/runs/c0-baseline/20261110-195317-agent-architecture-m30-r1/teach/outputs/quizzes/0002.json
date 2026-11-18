@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student finished bandsaw training last week. Today she opens the makerspace assistant, and the program starts a new session with an empty message list and no saved notes. What does the model know about her training?",
+      "options": [
+        {"id": "a", "text": "Nothing, because the new context window holds no record of it"},
+        {"id": "b", "text": "Everything, because the model keeps what users told it earlier"},
+        {"id": "c", "text": "Only the main points, since the model keeps short summaries"},
+        {"id": "d", "text": "It depends on how large the model's context window happens to be"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "In a simplified run, the fixed part (system prompt and tool descriptions) plus the question is 1,000 tokens. Two tool results come back, each of 500 tokens; ignore the model's own tool requests. The model is called three times: the first call sees only the fixed part and question, and each later call sees everything gathered so far. How many tokens does the third call send as input?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences: why does a long agent run cost much more than the total size of what its tools returned?"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your makerspace manuals total about 400 pages, and students ask many different questions. Which approach best keeps cost per request low while still answering from the right page?",
+      "options": [
+        {"id": "a", "text": "Put all 400 pages in the system prompt, since the window is big enough"},
+        {"id": "b", "text": "A search tool that returns a few relevant passages with page numbers"},
+        {"id": "c", "text": "Save the 400 pages as a note that is loaded at session start"},
+        {"id": "d", "text": "A one-paragraph summary of all manuals placed in the system prompt"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Which of these is the best candidate to save as a note that is loaded in later sessions?",
+      "options": [
+        {"id": "a", "text": "The full text of the manual page found during today's search"},
+        {"id": "b", "text": "The raw calendar entries returned by today's availability check"},
+        {"id": "c", "text": "The date a student completed training on the laser cutter"},
+        {"id": "d", "text": "The model's step-by-step reasoning from today's conversation"}
+      ]
+    }
+  ]
+}

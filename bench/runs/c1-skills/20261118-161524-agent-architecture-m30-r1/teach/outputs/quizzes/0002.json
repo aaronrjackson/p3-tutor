@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student chats with your assistant on Monday and says they prefer evening slots. The team added no saving or loading code. On Thursday the same student starts a new session. What does the model see in its first call?",
+      "options": [
+        {"id": "a", "text": "The Monday chat, kept by the model from its earlier session"},
+        {"id": "b", "text": "A summary of Monday that the model wrote when the chat ended"},
+        {"id": "c", "text": "Only what the program sends: prompt, tools and the new message"},
+        {"id": "d", "text": "The Monday chat, kept by the API under the student's account"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent run makes three model calls. The system prompt, tool definitions and question total 2,000 tokens. After call 1 a tool result of 1,000 tokens is added. After call 2 a second tool result of 500 tokens is added. The whole history is sent in every call. Ignoring the model's own output tokens, how many input tokens are sent over the whole run?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your manual search uses only embeddings. A student asks about error code F-207, and the chunk that contains \"F-207\" is not in the top results. Which change is most likely to fix this?",
+      "options": [
+        {"id": "a", "text": "Add keyword search such as BM25 and combine it with the embeddings"},
+        {"id": "b", "text": "Switch to a model with a context window five times larger"},
+        {"id": "c", "text": "Add a sentence to the system prompt that tells the model to find F-207"},
+        {"id": "d", "text": "Make every chunk much shorter so the code is a bigger share"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences: a run has 10 steps and the student types nothing new after the first message. Why does each step still cost more input than the step before it?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "In one session the assistant retrieves the manual chunk for error E-14 and answers correctly. Next day a different student starts a new session and asks about E-14. What must happen for the assistant to answer from the manual again?",
+      "options": [
+        {"id": "a", "text": "Nothing; the model learned the chunk and recalls it from yesterday"},
+        {"id": "b", "text": "Nothing; the retrieved chunk stays in the window between sessions"},
+        {"id": "c", "text": "The model must be retrained on the manual so that it knows E-14"},
+        {"id": "d", "text": "The program must search the manuals and add the chunk to the new context"}
+      ]
+    }
+  ]
+}

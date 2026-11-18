@@ -1,0 +1,37 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "a",
+      "rationale": "The model keeps nothing between calls or sessions; it only sees the text in its context window. With an empty message list and no notes, the training is not in the window, so the model cannot know it. Options b and c assume the model remembers on its own (M3); option d confuses window size with persistence, since any window starts empty in a new session.",
+      "distractors": {"b": "M3", "c": "M3", "d": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": 2000,
+      "tolerance": 0,
+      "rationale": "Call 1 sees 1,000 tokens. Call 2 adds the first result: 1,500. Call 3 adds the second result: 2,000. The third call sends everything gathered so far, not just the newest result. Answering 500 counts only the newest result; 4,500 sums all three calls instead of asking for the third."
+    },
+    {
+      "id": "q3",
+      "answer": "Each model call re-sends the whole context so far, so every earlier tool result is paid for again at every later step.",
+      "accepted": [
+        "Because the full context is sent again on every call, results are paid for repeatedly.",
+        "The model has no memory between calls, so the program re-sends everything each step and earlier results are counted every time."
+      ],
+      "rationale": "Full credit needs the idea that the whole accumulated context is re-sent on each call, so earlier results are paid for repeatedly. Saying only that tools are expensive or that there are many steps is partial or wrong."
+    },
+    {
+      "id": "q4",
+      "answer": "b",
+      "rationale": "Retrieval keeps the manuals outside the window and brings in only a few relevant passages, which keeps tokens low on every call and lets the assistant cite pages. Pasting everything (a) is paid for on each call and invites context rot (M7). Loading 400 pages as a note (c) has the same cost problem. A one-paragraph summary (d) is cheap but cannot hold the specific figures students need.",
+      "distractors": {"a": "M7", "c": "M7"}
+    },
+    {
+      "id": "q5",
+      "answer": "c",
+      "rationale": "Notes should be short facts that stay true next visit and cannot be cheaply re-fetched, such as a training completion date. The manual page (a) and calendar entries (b) can be fetched again by a tool and calendar entries go stale; the model's reasoning (d) is bulky and of no use next visit."
+    }
+  ]
+}

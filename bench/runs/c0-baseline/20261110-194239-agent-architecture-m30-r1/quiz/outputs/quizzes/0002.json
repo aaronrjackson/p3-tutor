@@ -1,0 +1,62 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your makerspace assistant's code always runs three steps in this order: look up the manual page, call the model to draft an answer, then call the model to check the draft. Who decides that order of steps?",
+      "options": [
+        {"id": "a", "text": "The model, which chooses each next step as it works on the question"},
+        {"id": "b", "text": "The student, through the way the question is worded to the assistant"},
+        {"id": "c", "text": "The program's code, which the developers wrote before any question arrived"},
+        {"id": "d", "text": "The tool descriptions, which tell the model what order to follow here"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which part of the makerspace assistant is the best candidate for a fixed workflow rather than an agent?",
+      "options": [
+        {"id": "a", "text": "Booking a machine once the student has confirmed the machine, date and time"},
+        {"id": "b", "text": "Working out why a student's laser cuts keep coming out burnt and uneven"},
+        {"id": "c", "text": "Answering an unclear question such as \"my print failed, what do I do?\""},
+        {"id": "d", "text": "Planning a project that needs several machines and many different manuals"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one sentence, what is the difference between a workflow and an agent, in terms of who controls the sequence of steps?"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every manual question in your assistant needs the same steps: search the manuals, then write an answer from the pages found. Your sponsor gave you a small model budget. Why is a fixed workflow often the better choice here?",
+      "options": [
+        {"id": "a", "text": "A workflow has no model in it, so no model usage fees are charged"},
+        {"id": "b", "text": "Only a workflow is able to call a search tool over the manual pages"},
+        {"id": "c", "text": "A workflow gives better answers than an agent on every kind of task"},
+        {"id": "d", "text": "The number of model calls is known in advance, so cost is predictable"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A fixed workflow for a manual question always makes 2 model calls. An agent doing the same job makes 5 model calls on average. Over 200 questions, how many more model calls does the agent make than the workflow? Assume the question count is the only difference.",
+      "unit": "model calls"
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one sentence, what must be true about a task for an agent to be a better choice than a fixed workflow?"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory</title>
+  <style>
+    body { max-width: 40rem; margin: 0 auto; padding: 2rem 1rem; font-family: Charter, Georgia, serif; line-height: 1.5; color: #1f1d1a; background: #fffdf8; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid #e4dfd4; vertical-align: top; }
+    @media (prefers-color-scheme: dark) { body { background: #171614; color: #e9e5dc; } th, td { border-color: #36332e; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context and memory in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory.html">lesson 1</a>.</p>
+  <h2>Terms</h2>
+  <ul>
+    <li><strong>Context:</strong> the tokens given to the model in one call.</li>
+    <li><strong>Context window:</strong> the most tokens one call can hold, reply included.</li>
+    <li><strong>Context rot:</strong> recall gets worse as the context grows.</li>
+    <li><strong>Memory:</strong> storage kept by your program, read back into the window.</li>
+    <li><strong>Retrieval:</strong> fetching only the needed part into the window.</li>
+    <li><strong>Compaction:</strong> summarizing a full context and continuing in a fresh window.</li>
+  </ul>
+  <h2>Where does it go?</h2>
+  <table>
+    <tr><th>Information</th><th>Lives in</th><th>Enters the window</th></tr>
+    <tr><td>Role, rules</td><td>Instructions</td><td>Every call</td></tr>
+    <tr><td>This conversation</td><td>The window</td><td>Every call, until the session ends</td></tr>
+    <tr><td>Student record</td><td>Stored record</td><td>When a tool reads it</td></tr>
+    <tr><td>Manuals</td><td>Searchable store</td><td>Matching page only</td></tr>
+  </table>
+  <h2>Rules of thumb</h2>
+  <ul>
+    <li>The model keeps nothing between calls; the program resends.</li>
+    <li>Input tokens for a request = the sum of every call's whole context, so each result is paid for again on later calls.</li>
+    <li>Return small pieces from tools, never whole manuals.</li>
+    <li>Facts the system must get right come from your database, not from model-written notes.</li>
+  </ul>
+</main>
+</body>
+</html>

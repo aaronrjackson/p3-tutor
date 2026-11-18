@@ -1,0 +1,35 @@
+{
+  "id": "0001",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The topic is the bigger one, so 남동생은 comes first. The weaker side takes 보다: 저보다. Then 더 and 커요. Option a swaps the two sides. Option c puts 보다 as a separate word before the noun. Option d mixes 가장 with 보다.",
+      "distractors": {"a": "M4", "c": "M2", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "A superlative uses 제일 or 가장 before the adjective and has no 보다. Option a is a comparative with no second noun and means only 'faster'. Option b mixes 제일 with 보다.",
+      "distractors": {"a": "M5", "b": "M3"}
+    },
+    {
+      "id": "q3",
+      "answer": "You are faster than Jisu.",
+      "accepted": ["you are faster than jisu", "you are faster than jisu.", "you're faster than jisu", "you're faster than jisu.", "you are faster than ji-su"],
+      "rationale": "너는 is the topic (you). 지수보다 means 'than Jisu'. 더 빨라요 means 'is faster'. An answer that says Jisu is faster reverses the sides (M4)."
+    },
+    {
+      "id": "q4",
+      "answer": "보다",
+      "accepted": ["boda"],
+      "rationale": "보다 means 'than' and attaches to the end of the noun that you compare against: 너보다."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "The topic with 는 is the one that has more. 저보다 marks the speaker as the one with less. Option b reverses the sides.",
+      "distractors": {"b": "M4"}
+    }
+  ]
+}

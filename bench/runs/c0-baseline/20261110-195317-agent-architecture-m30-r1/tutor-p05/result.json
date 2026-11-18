@@ -1,0 +1,152 @@
+{
+  "duration_api_ms": 25505,
+  "stop_reason": "end_turn",
+  "session_id": "f433dc5a-dcaa-44ad-ae14-e254ca062903",
+  "total_cost_usd": 0.1442801,
+  "usage": {
+    "input_tokens": 12,
+    "cache_creation_input_tokens": 24667,
+    "cache_read_input_tokens": 134176,
+    "output_tokens": 2032,
+    "output_tokens_details": {
+      "thinking_tokens": 491
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 24667,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 654,
+        "cache_read_input_tokens": 34927,
+        "cache_creation_input_tokens": 376,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 376
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 2032,
+      "cacheReadInputTokens": 134176,
+      "cacheCreationInputTokens": 24667,
+      "webSearchRequests": 0,
+      "costUSD": 0.1324296,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 491,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 24667,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 14415,
+      "outputTokens": 818,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0118505,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 438,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I'll answer the question briefly, but I won't do the full derivation. It's out of scope for your mission, and it needs math you haven't met yet.\n\n**The premise.** The model providers do use reinforcement learning (RL) to make their models better at calling tools. That happens before you ever call the model. Your team will use a finished model through an API, so you're already getting that benefit. Training your own would cost far more than your sponsor's budget.\n\n**The PPO idea, in plain terms.** PPO (Proximal Policy Optimization) nudges a model toward behavior that earned more reward, without letting one update change the model too much. Suppose the assistant booked the wrong laser-cutter slot and got a reward of −1. PPO makes that action a bit less likely next time. It computes a ratio, `r = new probability of the action / old probability`. It multiplies the ratio by an \"advantage\", which says how much better or worse the outcome was than expected. Then it clips `r` to roughly 0.8–1.2, so one lucky or unlucky example can't yank the model around. The paper's objective is `E[min(r·A, clip(r, 1−ε, 1+ε)·A)]`. See [Schulman et al. 2017](https://arxiv.org/pdf/1707.06347).\n\n**What I left out.** The derivation starts from the policy gradient and trust regions. It needs probability, gradients and RL basics, and you haven't covered any of them. They're also outside your mission.\n\n**What improves tool calling for your assistant instead:**\n- Write clear tool descriptions.\n- Build a small test set of real student requests and check which ones fail.\n- Make the fixed steps, like the calendar check, a workflow rather than model choices.\n\nI can teach a lesson on how to do that. Want it?\n\nQuick check: in the clipping idea, why is it safer to limit how far one update can move the model?\n\nSources:\n- [Proximal Policy Optimization Algorithms (arXiv)](https://arxiv.org/pdf/1707.06347)",
+  "ttft_ms": 1589,
+  "type": "result",
+  "duration_ms": 25726,
+  "uuid": "1b7c1664-333a-4112-af15-42a356bbe479",
+  "ttft_stream_ms": 1541,
+  "time_to_request_ms": 128,
+  "first_content_frame_ms": 1541,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 12,
+      "outputTokens": 2032,
+      "cacheReadInputTokens": 134176,
+      "cacheCreationInputTokens": 24667,
+      "webSearchRequests": 0,
+      "costUSD": 0.1324296,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 491,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 24667,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-haiku-5-5": {
+      "inputTokens": 14415,
+      "outputTokens": 818,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 1,
+      "costUSD": 0.0118505,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 438,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 0,
+      "canonicalModel": "claude-haiku-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-16T13:12:30.737Z"
+}

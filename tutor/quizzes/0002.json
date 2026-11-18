@@ -1,0 +1,13 @@
+{
+  "id": "0002",
+  "objective": "O1",
+  "title": "Korean comparatives: write a sentence",
+  "items": [
+    {
+      "id": "q1",
+      "type": "short",
+      "objective": "O1",
+      "stem": "Write this sentence in Korean: \"Jisu is faster than my younger brother.\" Use the polite style. Words: 지수 = Jisu, 남동생 = younger brother, 빨라요 = is fast, 보다 = than, 더 = more, 는/은 = topic marker."
+    }
+  ]
+}

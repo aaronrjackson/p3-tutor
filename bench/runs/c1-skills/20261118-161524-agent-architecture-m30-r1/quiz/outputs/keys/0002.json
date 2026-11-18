@@ -1,0 +1,37 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "In a workflow, developer code owns the control flow: the steps and their order are fixed before the run. In an agent, the model owns it (option a)."
+    },
+    {
+      "id": "q2",
+      "answer": "a workflow",
+      "accepted": ["workflow", "it is a workflow", "this is a workflow", "workflow."],
+      "rationale": "Code fixes the order of the steps (calendar first, then one model call), so the code owns the control flow. That is a workflow. An agent would let the model choose the next action."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "The steps never change, so there is nothing for a model to decide. A fixed workflow is cheaper, faster and more predictable. An agent (a) or several agents (b) add cost and risk for no gain. A larger context window (d) does not address the need."
+    },
+    {
+      "id": "q4",
+      "answer": "a",
+      "rationale": "In a workflow, code picks the next step, so no model calls are spent deciding what to do. An agent makes extra model calls at each loop step to choose actions. A workflow still calls the model (c) and can still use tools (b)."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "A vague plan needs the model to decide which machines and dates to check, and what to do with each result, so the path is not known ahead of time. The other three have fixed, known steps, so code can do them."
+    },
+    {
+      "id": "q6",
+      "answer": 300,
+      "tolerance": 0,
+      "rationale": "The agent makes 5 x 100 = 500 calls and the workflow makes 2 x 100 = 200 calls. The difference is 500 - 200 = 300."
+    }
+  ]
+}

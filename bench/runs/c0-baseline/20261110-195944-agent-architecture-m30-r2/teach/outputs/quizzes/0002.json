@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A teammate suggests putting all forty makerspace manuals into the context on every call, since the model's window is big enough to hold them. What is the strongest objection?",
+      "options": [
+        {"id": "a", "text": "The model will refuse any context that holds more than one manual"},
+        {"id": "b", "text": "Every call pays for all those tokens, and long contexts are used less well"},
+        {"id": "c", "text": "The model forgets each manual as soon as it has read it once"},
+        {"id": "d", "text": "The manuals would have to be rewritten before a model could read them"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your program's setup (instructions and tool descriptions) is 1,000 tokens and the student's question is 100 tokens. In one run the model requests a tool, gets a 500-token result, requests a second tool, gets another 500-token result, and then writes its final answer. Each call re-sends the full history, and you ignore the model's own output. How many input tokens does the model read across the whole run?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday the assistant tells Priya, by name, that she may use the laser cutter because she passed training. This is a brand-new conversation, and she did not mention training. What must the program have done?",
+      "options": [
+        {"id": "a", "text": "Loaded her saved record into the context before the model was called"},
+        {"id": "b", "text": "Relied on the model remembering her from its earlier conversations"},
+        {"id": "c", "text": "Waited for the model to learn her status from its training"},
+        {"id": "d", "text": "Kept the old conversation's context window open on its servers"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In an agent loop, why does each additional step cost more input tokens than the step before it?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Which information should the assistant fetch by retrieval at question time, rather than keep in the context all the time or save as a note?",
+      "options": [
+        {"id": "a", "text": "The paragraph on aluminium cutting speeds, in a 300-page milling manual"},
+        {"id": "b", "text": "The rule that the assistant must always cite the manual it used"},
+        {"id": "c", "text": "The description of what the check_calendar tool does and takes"},
+        {"id": "d", "text": "The fact that a given student has passed the router training"}
+      ]
+    }
+  ]
+}

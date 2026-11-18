@@ -1,0 +1,67 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A workflow and an agent can both call a language model and use tools. What is the main difference between them?",
+      "options": [
+        {"id": "a", "text": "A workflow uses no tools, while an agent uses at least one"},
+        {"id": "b", "text": "Code fixes the order of steps in a workflow; the model picks them in an agent"},
+        {"id": "c", "text": "A workflow calls the model once, while an agent calls it many times"},
+        {"id": "d", "text": "A workflow runs on a schedule, while an agent runs only on request"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A makerspace bot always runs the same three steps in code: (1) search the manuals for the student's question, (2) give the top three passages to the model, (3) return the model's answer. The model never chooses what happens next. How should this design be described?",
+      "options": [
+        {"id": "a", "text": "An agent, because it uses a model together with a search tool"},
+        {"id": "b", "text": "An agent, because it looks up information from outside the model"},
+        {"id": "c", "text": "A workflow, because the model decides when the bot should stop"},
+        {"id": "d", "text": "A workflow, because the code fixes the sequence of the steps"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "The booking feature always does the same things in the same order: check the calendar, book the slot if it is free, then send a confirmation. What is the best reason to build it as a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "The steps are known in advance, so fixed code is cheaper and more predictable"},
+        {"id": "b", "text": "Booking is risky, so a language model should never be involved at all"},
+        {"id": "c", "text": "Workflows cope with requests nobody planned for better than agents do"},
+        {"id": "d", "text": "A workflow can use more tools than an agent can in a single request"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A student asks: \"Can I run a week-long 3D print, and if not, what are my options?\" After each tool result, the model must decide whether to search the manuals again, check the calendar, or stop and answer, and no one can list the steps in advance. Is this a workflow or an agent? Answer with one word."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "The team has a small model budget. Compared with an agent, why does a fixed workflow usually help keep the cost per request down?",
+      "options": [
+        {"id": "a", "text": "It runs a smaller model, since workflows cannot run large models"},
+        {"id": "b", "text": "It skips the model, since workflows never need a language model"},
+        {"id": "c", "text": "It makes a known number of model calls, with no steps spent deciding"},
+        {"id": "d", "text": "It saves every answer, so it never calls the model a second time"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A program always runs the same four steps in the same order. Step 3 asks a language model to summarize a manual page, and the model's output goes straight to step 4. Is this a workflow or an agent? Answer with one word."
+    }
+  ]
+}

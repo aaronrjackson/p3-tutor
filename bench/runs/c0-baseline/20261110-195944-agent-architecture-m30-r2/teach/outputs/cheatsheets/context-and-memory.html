@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory in an agent</title>
+  <style>
+    body { max-width: 40rem; margin: 0 auto; padding: 2rem 1rem; font-family: Charter, Georgia, serif; line-height: 1.5; color: #1f1d1a; background: #fffdf8; }
+    @media (prefers-color-scheme: dark) { body { color: #e9e5dc; background: #171614; } }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.4rem; border-bottom: 1px solid #aaa; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context and memory in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory-in-an-agent.html">lesson 1</a>.</p>
+  <table>
+    <thead><tr><th>Information</th><th>Where it lives</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Rules, tool descriptions</td><td>Context, every call</td><td>Short, always needed</td></tr>
+      <tr><td>Facts about one person (training)</td><td>Saved note, loaded at session start</td><td>Durable, small, changes decisions</td></tr>
+      <tr><td>Long fixed manuals</td><td>Library; retrieve top chunks</td><td>Mostly irrelevant to any one question</td></tr>
+      <tr><td>Live data (calendar)</td><td>Tool call, lean result</td><td>Goes stale; fetch when needed</td></tr>
+    </tbody>
+  </table>
+  <h2>Rules of thumb</h2>
+  <ul>
+    <li>The model keeps nothing between calls; the program re-sends the history.</li>
+    <li>Input cost: sum of every call's full context, so it grows faster than the step count.</li>
+    <li>Keep the context small: lean tools first, then trimming, then compaction.</li>
+    <li>Memory between sessions = notes your program saves and loads, not model learning.</li>
+    <li>Retrieval: split, index, search, add top chunks with their source.</li>
+  </ul>
+</main>
+</body>
+</html>

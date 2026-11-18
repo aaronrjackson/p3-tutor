@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory in an agent</title>
+  <style>
+    body { max-width: 44rem; margin: 0 auto; padding: 2rem 1rem; font-family: Charter, Georgia, serif; line-height: 1.5; color: #1f1d1a; background: #fffdf8; }
+    @media (prefers-color-scheme: dark) { body { color: #e9e5dc; background: #171614; } a { color: #eaa77a; } }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.6rem; }
+    table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+    th, td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid #8884; vertical-align: top; }
+    a { color: #9a4517; }
+  </style>
+</head>
+<body>
+  <h1>Context and memory in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory-in-an-agent.html">lesson 1</a>. Objective O3.</p>
+  <h2>Three places a fact can live</h2>
+  <table>
+    <tr><th>Place</th><th>Lasts</th><th>Use for</th></tr>
+    <tr><td>Context window</td><td>One call, re-sent each step</td><td>What the model needs now</td></tr>
+    <tr><td>Message list in the program</td><td>One session</td><td>History of this request</td></tr>
+    <tr><td>Storage (notes, database)</td><td>Between sessions</td><td>Training status, preferences</td></tr>
+  </table>
+  <h2>Rules</h2>
+  <ul>
+    <li>The model keeps no state. The program re-sends the whole history every call.</li>
+    <li>Cost of a run = sum of the input of every call, not the final size.</li>
+    <li>Everything counts toward the window: prompt, tools, messages, tool results, output.</li>
+    <li>More context can lower recall (context rot). Keep the smallest useful set.</li>
+    <li>Shrink: short tool results, tool-result clearing, compaction (can lose facts).</li>
+  </ul>
+  <h2>Retrieval</h2>
+  <ul>
+    <li>Chunk, embed, search, add top chunks to the context.</li>
+    <li>Embeddings find meaning. BM25 (keywords) finds exact codes. Use both.</li>
+    <li>Put the machine name in each chunk.</li>
+    <li>Under about 200,000 tokens, consider skipping retrieval and testing it.</li>
+    <li>Retrieval does not teach the model. Search again each session.</li>
+  </ul>
+  <p><a href="https://anthropic.com/engineering/effective-context-engineering-for-ai-agents">Anthropic: Effective context engineering</a> &middot;
+     <a href="https://anthropic.com/news/contextual-retrieval">Contextual Retrieval</a> &middot;
+     <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">Context windows</a></p>
+</body>
+</html>

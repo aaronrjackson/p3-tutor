@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 16776,
+  "stop_reason": "end_turn",
+  "session_id": "667df7d9-29ee-4736-b550-001f3643d12d",
+  "total_cost_usd": 0.1135784,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 22447,
+    "cache_read_input_tokens": 64684,
+    "output_tokens": 1731,
+    "output_tokens_details": {
+      "thinking_tokens": 464
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 22447,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 838,
+        "cache_read_input_tokens": 32349,
+        "cache_creation_input_tokens": 734,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 734
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1731,
+      "cacheReadInputTokens": 64684,
+      "cacheCreationInputTokens": 22447,
+      "webSearchRequests": 0,
+      "costUSD": 0.1135784,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 464,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 22447,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Quick correction first: \"the best agents are trained with RL\" is partly true, but the training is done by the model labs. They run RL on the base model so it gets good at tool use. Your assistant gets that for free when you call one of those models. You don't need to train anything to get a good tool-calling agent. Training is also out of scope in your mission, and with a small budget it would be a poor use of your five weeks.\n\nHere is the idea behind PPO, with a makerspace example.\n\n**Setup.** Say the model picks a tool (`check_calendar`, `search_manual` or `book_slot`) and gets a reward: +1 if the student's request was handled correctly, 0 if not. The policy π_θ is the model's probability of each choice.\n\n**Step 1, policy gradient.** To make good actions likelier, nudge θ to raise the expected reward. The gradient is E[∇log π_θ(a|s) · A], where A is the advantage: how much better this action was than average. If `search_manual` led to a correct answer, its probability goes up.\n\n**Step 2, reuse data.** Generating tries is expensive, so you want several updates on the same batch. After the first update the policy has changed. So you weight each sample by the ratio r = π_θ(a|s) / π_old(a|s). That gives the objective r·A.\n\n**Step 3, don't move too far.** The ratio is only trustworthy while π_θ stays close to π_old. PPO clips it:\n\nL = E[ min( r·A, clip(r, 1−ε, 1+ε)·A ) ]\n\nWith ε around 0.2, once an action's probability has grown about 20% on a good outcome, the gradient stops pushing. That keeps updates small and stable. The source is Schulman et al. 2017, \"Proximal Policy Optimization Algorithms\" (arXiv 1707.06347).\n\n**Why it doesn't fit your project.** You would need an open-weights model, GPUs, thousands of simulated booking conversations, and a reliable reward signal. That costs far more than your sponsor's budget.\n\n**What helps tool calling at your scale:**\n- Clear tool descriptions. This is already in your mission.\n- A small set of test requests that you re-run after every change, to see whether the right tool gets called.\n- Making fixed steps, like the booking confirmation, plain workflow code instead of agent decisions.\n\nQuick check: in your own words, what does the clip stop from happening?\n\nIf you're curious about training, I can write a short optional lesson on it. I'd suggest we do context and memory first, since your quiz 0001 is also still waiting to be graded.",
+  "ttft_ms": 1192,
+  "type": "result",
+  "duration_ms": 17104,
+  "uuid": "b1ce03c6-74a5-440d-a3f1-619b45d05369",
+  "ttft_stream_ms": 1158,
+  "time_to_request_ms": 108,
+  "first_content_frame_ms": 1158,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1731,
+      "cacheReadInputTokens": 64684,
+      "cacheCreationInputTokens": 22447,
+      "webSearchRequests": 0,
+      "costUSD": 0.1135784,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 464,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 22447,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-16T13:12:30.737Z"
+}

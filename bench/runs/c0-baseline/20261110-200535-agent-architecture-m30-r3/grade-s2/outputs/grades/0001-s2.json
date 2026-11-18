@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right: the loop of choosing an action, running it and feeding the result back is what makes a system an agent. A longer prompt or a bigger model changes what one call can do, not the structure of the system."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The model only writes a structured request: the tool's name plus arguments such as the laser cutter and tomorrow's date. The program around it runs check_calendar. Keep this split in mind, because it comes up again in q4 and q6."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "You picked 'no change; it will eventually fix the bug'. That is tempting, but the agent is getting the same failing result every step, so more steps add nothing new. All 40 steps are already in its context, so it has seen the failure and still repeats it. The best safeguard is a stopping condition such as a step limit, which ends the loop and reports back to a person. Every agent loop needs one."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "Your number is right: 4 model calls. The reason is off, though. The model does not run the tools. It asks for one each time it is called, and the program runs it. The count is 3 tool requests plus 1 final answer. Equivalently, the model is called once for the question and once for each of the 3 tool results."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right, and you gave both parts: the result goes back in as the next input, and the model uses it to decide its next step. Your group-chat comparison works: the result is a new message the model replies to."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name is part of it, and the model never sees the code, so you are right that it works from what it is given. But it is given the whole tool description: the name, what the tool does, and the parameters it takes. A name alone can mislead. For example, check_calendar does not say whether it books or only reads. This matters for your mission, because the descriptions you write for your tools are what the model uses to choose."
+    }
+  ],
+  "summary": "You have the loop down: what makes an agent (q1), that the model only requests a tool (q2), and that results go back as the next input (q5). Two ideas to fix. First, the loop needs a stopping condition, because an agent repeating a failure will not fix itself with more steps (q3). Second, the model never runs tools, even though your q4 reasoning said it does, and it picks tools from their full descriptions, not just their names (q6). Next step: for one makerspace tool such as check_calendar, write a description with its name, what it does and its parameters. Then write one sentence saying who runs it and what the model outputs."
+}

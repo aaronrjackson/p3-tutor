@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 14971,
+  "stop_reason": "end_turn",
+  "session_id": "ea0187a2-159b-4769-93c0-1058e6ced1a3",
+  "total_cost_usd": 0.11525329999999999,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 23001,
+    "cache_read_input_tokens": 65173,
+    "output_tokens": 1672,
+    "output_tokens_details": {
+      "thinking_tokens": 458
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23001,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 567,
+        "cache_read_input_tokens": 32883,
+        "cache_creation_input_tokens": 754,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 754
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1672,
+      "cacheReadInputTokens": 65173,
+      "cacheCreationInputTokens": 23001,
+      "webSearchRequests": 0,
+      "costUSD": 0.11525329999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 458,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23001,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Here's a different angle: think of a restaurant.\n\n**The picture.** You're a customer at a table. You can't go into the kitchen, and you can't cook. What you have is a menu and a pen. You read the menu, write \"one margherita pizza, no olives\" on a slip, and the waiter takes the slip away. The kitchen makes the pizza, and the waiter brings it back. Now you can decide what to do next: eat, order a drink, or ask for the bill.\n\n**The mapping.**\n- You are the **language model**. It only reads and writes text. It can't touch anything.\n- The **menu** is the list of tool descriptions. It tells the model what it may ask for and what each item does.\n- The **order slip** is the tool call. It's just text: \"use this tool, with these details.\" Writing the slip does nothing by itself.\n- The **waiter and kitchen** are your program. Your program reads the slip, does the real work, and brings the result back.\n- The **dish** is the tool result, which goes back to the model as more text to read.\n\n**The key point:** the model never books anything. It writes a request, and your code carries it out. In your makerspace assistant, the model writes \"check the calendar for the laser cutter on Friday.\" Your code looks at the calendar and returns the open slots. The model reads them and replies to the student.\n\n**Where the analogy breaks.** A real customer remembers the meal so far. The model doesn't, so every turn it re-reads the whole conversation, menu included. That's why long menus and long histories cost money, which matters for your budget.\n\nQuick check: in your assistant, what is the \"menu,\" and who is the \"waiter\" when a student asks to book the 3D printer?\n\nIf it still feels fuzzy, I can write a short lesson that walks one booking request through this step by step.",
+  "ttft_ms": 1372,
+  "type": "result",
+  "duration_ms": 15136,
+  "uuid": "e9d10a29-45eb-4fc2-973c-c5731a66cea1",
+  "ttft_stream_ms": 1046,
+  "time_to_request_ms": 103,
+  "first_content_frame_ms": 1046,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1672,
+      "cacheReadInputTokens": 65173,
+      "cacheCreationInputTokens": 23001,
+      "webSearchRequests": 0,
+      "costUSD": 0.11525329999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 458,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23001,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-16T13:12:30.737Z"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The model keeps no state between calls or sessions, and the program had no saving code, so a new session starts with only the system prompt, tool definitions and the new message. Options a, b and d assume memory that nobody built (M3).",
+      "distractors": {"a": "M3", "b": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 8500,
+      "tolerance": 0,
+      "rationale": "Call 1 sends 2,000. Call 2 sends 2,000 + 1,000 = 3,000. Call 3 sends 3,000 + 500 = 3,500. The total is 2,000 + 3,000 + 3,500 = 8,500. The answer 3,500 is only the final context size, which forgets that the history is re-sent in every call."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Embeddings match meaning and can miss exact identifiers; keyword search such as BM25 matches exact strings like F-207, and combining both is hybrid search. A larger window (b) does not change which chunks are retrieved (M7). A prompt instruction (c) cannot make the search return the chunk. Shorter chunks (d) do not fix the lack of exact matching.",
+      "distractors": {"b": "M7"}
+    },
+    {
+      "id": "q4",
+      "answer": "Because the whole history, including earlier tool results, is sent again in every call, so the input grows with each step.",
+      "accepted": [
+        "The program re-sends the full history each call, and each step adds more to it.",
+        "Each call includes all earlier messages and tool results plus the new one, so the input gets longer."
+      ],
+      "rationale": "Full credit needs the idea that the history is re-sent on every call and grows with each added result. Saying only that the model gets more complicated, or that the model remembers earlier steps without being sent them, is wrong (M3)."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "The chunk was in the context for one session only. The model does not learn from retrieval (M8), and the window does not persist between sessions, so the program must search again and add the chunk to the new context. Retraining (c) is unnecessary and out of scope.",
+      "distractors": {"a": "M8", "b": "M3", "c": "M8"}
+    }
+  ]
+}

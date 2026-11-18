@@ -1,0 +1,37 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. You put the bigger one, 남동생은, first as the topic. You gave 보다 to the weaker side, 저보다. The swapped sentence in option a is the usual trap, and you avoided it."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. 제일 picks the top of a group, so the sentence needs no second noun and no 보다. Option a has only 더, so it means just \"faster\"."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. You read 너는 as the topic and 지수보다 as \"than Jisu\". You kept the sides in the right order."
+    },
+    {
+      "id": "q4",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. 보다 attaches straight to the end of the noun, as in 너보다."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The topic, 지수는, has more. The word with 보다, 저보다, has less. You read the direction right."
+    }
+  ],
+  "summary": "You scored 5 of 5. You can build and read comparatives with 보다 and 더. You can also choose 제일 for a superlative. This quiz tested recognition. Next, produce sentences yourself. Write three Korean sentences from memory: one with 보다, one with 덜, one with 가장. Then ask me to check them."
+}

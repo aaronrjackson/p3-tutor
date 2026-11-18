@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "In a workflow, predefined code paths orchestrate the model and tools; in an agent, the model dynamically directs its own process and tool use. The difference is who owns the control flow. Model size, tool count (a), number of model calls (c) and output format (d) do not decide it; thinking they do shows M8.",
+      "distractors": {"a": "M8", "c": "M8"}
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "The programmer fixed the steps and the branch rule in code, and the model only fills in each step (a label, then a reply). That is a workflow, even though it uses a model and tools. The model labels the question but does not choose the path or the tools on its own. Calling it an agent because it uses a model and tools shows M8.",
+      "distractors": {"a": "M8", "b": "M8"}
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Booking has the same steps in the same order every time, so code can own the flow: it is cheaper, more predictable and easier to test. The other three are open-ended, and the number of searches and steps depends on what turns up, which suits an agent. Choosing one of them for a workflow is less wrong than choosing an agent for booking, but picking an agent for everything shows M7.",
+      "distractors": {"b": "M7", "c": "M7", "d": "M7"}
+    },
+    {
+      "id": "q4",
+      "answer": "the code",
+      "accepted": [
+        "code",
+        "the program",
+        "the programmer",
+        "predefined code",
+        "predefined code paths",
+        "the code the programmer wrote",
+        "the developer's code",
+        "the program's fixed steps"
+      ],
+      "rationale": "In a workflow the next step is set in advance by code the programmer wrote. The model does the work inside a step, but it does not choose the next one. Answering 'the model' describes an agent."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "An agent earns its extra cost when the steps cannot be predicted in advance, because the model must choose them as it goes. Agents usually cost more (a), still need a stopping rule such as a step limit (b), and are less predictable and harder to test than workflows (c). Choosing a, b or c treats the agent as better in general, which is M7 (b also reflects M6).",
+      "distractors": {"a": "M7", "b": "M6", "c": "M7"}
+    },
+    {
+      "id": "q6",
+      "answer": 200,
+      "tolerance": 0,
+      "rationale": "Each question costs 3 calls x $0.02 = $0.06, so $12.00 / $0.06 = 200 questions. A fixed workflow has a known cost per request, which is one reason to prefer it when the steps never change. An agent's call count varies per request, so its cost can only be estimated."
+    }
+  ]
+}

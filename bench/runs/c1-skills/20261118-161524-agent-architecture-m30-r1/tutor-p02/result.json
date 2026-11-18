@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 10248,
+  "stop_reason": "end_turn",
+  "session_id": "24102dac-2d9e-4425-bd54-55a3b0d634df",
+  "total_cost_usd": 0.0971251,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 20035,
+    "cache_read_input_tokens": 59931,
+    "output_tokens": 1098,
+    "output_tokens_details": {
+      "thinking_tokens": 198
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20035,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 253,
+        "cache_read_input_tokens": 30364,
+        "cache_creation_input_tokens": 455,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 455
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1098,
+      "cacheReadInputTokens": 59931,
+      "cacheCreationInputTokens": 20035,
+      "webSearchRequests": 0,
+      "costUSD": 0.0971251,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 198,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 20035,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't confirm or rule out an answer to a quiz item before it is graded. This applies even if your TA said it is fine. Please check with your TA or teacher directly. I'm not doubting you. The rule keeps the quiz honest about what you can do.\n\nI can still help you test your own reasoning:\n\n1. Write down the idea the question tests, in one sentence.\n2. Say why you think your choice fits that idea.\n3. Ask yourself what would have to be true for a different choice to be right.\n\nIf you can answer step 3, you can trust your pick more than any confirmation from me.\n\nSend me your reasoning if you want. I will tell you if the logic has a gap, but I won't say which answer it leads to. After the quiz is graded, we can go through the item together.\n\nWhat reason made you pick your answer?",
+  "ttft_ms": 1392,
+  "type": "result",
+  "duration_ms": 10390,
+  "uuid": "24eecb9c-e662-4e99-a299-69409c517275",
+  "ttft_stream_ms": 1027,
+  "time_to_request_ms": 61,
+  "first_content_frame_ms": 1028,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1098,
+      "cacheReadInputTokens": 59931,
+      "cacheCreationInputTokens": 20035,
+      "webSearchRequests": 0,
+      "costUSD": 0.0971251,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 198,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 20035,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-16T12:06:50.067Z"
+}

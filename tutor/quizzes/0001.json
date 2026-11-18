@@ -1,0 +1,53 @@
+{
+  "id": "0001",
+  "objective": "O1",
+  "title": "Korean comparatives and superlatives",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O1",
+      "stem": "Which Korean sentence means \"My younger brother is bigger than I am\"? Words: 저 = I, 남동생 = younger brother, 커요 = is big, 보다 = than, 더 = more.",
+      "options": [
+        {"id": "a", "text": "저는 남동생보다 더 커요"},
+        {"id": "b", "text": "남동생은 저보다 더 커요"},
+        {"id": "c", "text": "남동생은 보다 저 커요"},
+        {"id": "d", "text": "남동생은 저보다 가장 커요"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O1",
+      "stem": "Which Korean sentence means \"My older brother is the fastest\"? Words: 형 = older brother, 빨라요 = is fast, 더 = more, 제일 = the most, 보다 = than.",
+      "options": [
+        {"id": "a", "text": "형은 더 빨라요"},
+        {"id": "b", "text": "형보다 제일 빨라요"},
+        {"id": "c", "text": "형은 제일 빨라요"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O1",
+      "stem": "Translate into English: 너는 지수보다 더 빨라요. Words: 너 = you, 지수 = Jisu (a name), 빨라요 = is fast."
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O1",
+      "stem": "Fill the blank with one Korean word that means \"than\": 저는 너___ 더 커요."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O1",
+      "stem": "In the sentence 지수는 저보다 더 예뻐요, who is prettier? Words: 지수 = Jisu, 저 = I (the speaker), 예뻐요 = is pretty, 보다 = than, 더 = more.",
+      "options": [
+        {"id": "a", "text": "Jisu is."},
+        {"id": "b", "text": "I am."},
+        {"id": "c", "text": "Both are."}
+      ]
+    }
+  ]
+}

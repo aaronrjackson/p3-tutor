@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The loop is what makes a system an agent. A longer prompt or a bigger model changes what one call can do. It does not change the structure."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Wrong. You chose the calendar entries, as if the model opens the booking system itself. The model only writes a request: the tool name and the arguments (laser cutter, tomorrow's date). The program runs check_calendar and sends the result back. The model has no way to reach the booking system by itself."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. More steps add nothing when the feedback is the same each time. A step limit ends the loop and hands the problem to a person. You can use this idea in the makerspace assistant."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Wrong. You answered 1, because you think the model runs the 3 tools itself. The program runs the tools. The model is called once for the question and once for each of the 3 tool results. That is 4 calls: 3 tool requests plus the final answer."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You are right that the program sends the result back to the model. You did not say why. The model needs the result in its next input, so it can choose its next step or write the final answer. The program then calls the model again with that result."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Good: the model gets a list of tools with names and descriptions, and picks the one that fits. That is the core idea. But the model does not remember past sessions on its own. It has no automatic memory. It only knows the descriptions in its current input, so the descriptions must be clear."
+    }
+  ],
+  "summary": "You know what makes an agent: the loop. You also know that a stopping condition is needed. Two things to fix. First, the program runs the tools. The model only writes a request, and each request or answer is one model call. Second, the model has no automatic memory between sessions. Next step: retrace the laser cutter request on paper. Mark each step as 'model call' or 'program runs tool'. Then redo q2 and q4 from memory."
+}

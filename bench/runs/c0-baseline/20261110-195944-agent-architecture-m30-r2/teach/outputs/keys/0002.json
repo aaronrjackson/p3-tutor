@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "A big window only raises the ceiling. Every token in the context is billed on every call, and models can use long contexts unevenly, so retrieving the few relevant chunks is cheaper and works better. Nothing stops a model reading several manuals (a), it does not forget within a call (c), and manuals need no rewriting (d).",
+      "distractors": {"c": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 4800,
+      "tolerance": 0,
+      "rationale": "Call 1 reads 1,000 + 100 = 1,100. Call 2 re-reads that plus the first result: 1,600. Call 3 adds the second result: 2,100. Total 1,100 + 1,600 + 2,100 = 4,800. Answering 2,100 counts only the last context and misses that earlier text is re-read on every call."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "The model keeps nothing between calls or conversations. For it to name Priya and her training, the program must have read a saved record (a note) and put it into this conversation's context. Answers b and c assume the model remembers or learns, which is M3.",
+      "distractors": {"b": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "Each call re-sends the whole history, including every earlier result, so the context and the tokens read grow with every step.",
+      "accepted": [
+        "The whole history is sent again on every call, so the input gets longer each step",
+        "Because earlier messages and tool results are re-read each call and the context keeps growing",
+        "The model re-reads all earlier steps every time"
+      ],
+      "rationale": "The model keeps nothing between calls, so the program re-sends the entire history each time, plus the newest result. Saying only that tool results are large, or that the model thinks harder, misses the re-sending. An answer that the model remembers earlier steps without re-reading them shows M3."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "A single paragraph from a long, fixed document is what retrieval is for: search, take the best chunk, add it to the context. The citing rule (b) and the tool description (c) are short and needed on every call, so they stay in the context. The training fact (d) is a durable fact about one person, which belongs in a saved note."
+    }
+  ]
+}

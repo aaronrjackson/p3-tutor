@@ -1,0 +1,40 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "A model call is stateless, so the program re-sends the whole conversation each time: the question and every earlier request and result. Sending only the newest result (a) or only the question (c) leaves the model without what it needs, and the model keeps nothing inside itself between calls (a, c, d).",
+      "distractors": {"a": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "Nothing survives between sessions unless the program saves it outside the model and loads it back into the next context. A bigger window (a) only raises a limit within one session, an instruction to remember (b) has nothing to store it in, and a chat open all semester (d) is impractical, costly and still not saved.",
+      "distractors": {"a": "M7", "b": "M3", "d": "M3"}
+    },
+    {
+      "id": "q3",
+      "answer": 7000,
+      "tolerance": 0,
+      "rationale": "Call 1 reads 1,000; call 2 reads 1,500; call 3 reads 2,000; call 4 reads 2,500. The total is 1,000 + 1,500 + 2,000 + 2,500 = 7,000. Answering 3,000 (1,000 plus three results, counted once) forgets that the context is re-read at every call."
+    },
+    {
+      "id": "q4",
+      "answer": "a",
+      "rationale": "Pasted text is read and billed at every call, and a long context can hurt recall (context rot), so a larger window raises the limit but does not remove the need to choose what goes in. The model can read pasted text (b), and a window does not make the model remember anything afterwards (d).",
+      "distractors": {"b": "M7", "c": "M7", "d": "M3"}
+    },
+    {
+      "id": "q5",
+      "answer": "Details left out of the summary are lost, because the model only sees the summary afterwards.",
+      "accepted": [
+        "Important details can be dropped from the summary and are then gone",
+        "The summary may leave out something important, which the model then cannot use",
+        "It loses information",
+        "Information that is not in the summary is lost"
+      ],
+      "rationale": "Compaction is lossy: whatever the summary omits is no longer in the context. Anything that must survive should also be saved as a note outside the context. Answers about cost or speed instead miss the point."
+    }
+  ]
+}

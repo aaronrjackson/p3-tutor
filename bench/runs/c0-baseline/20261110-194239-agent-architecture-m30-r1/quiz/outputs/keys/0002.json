@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "In a workflow, the control flow (which step runs next) is fixed in code written in advance, even though the model is called inside some steps. Option a describes an agent. A student's wording (b) or tool descriptions (d) do not set a fixed order. Picking a shows M7: any system that calls a model is an agent.",
+      "distractors": {"a": "M7", "d": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "a",
+      "rationale": "Booking has known inputs and the same steps every time (check the slot, create the booking, confirm), so code can own the order. The other three are open-ended: the needed steps depend on what turns up, which is where an agent helps. Picking one of them shows M8: agents are always the better choice.",
+      "distractors": {"b": "M8", "c": "M8", "d": "M8"}
+    },
+    {
+      "id": "q3",
+      "answer": "In a workflow, predefined code decides the sequence of steps; in an agent, the model decides the steps dynamically as it goes.",
+      "accepted": [
+        "In a workflow the code controls the steps, in an agent the model controls the steps",
+        "workflow: code decides the order; agent: the model decides the order",
+        "A workflow follows a path set in advance by code, while an agent chooses its own steps and tools"
+      ],
+      "rationale": "The distinction is who owns the control flow: developer-written code in a workflow, the model in an agent. Answers that say only that agents use tools or workflows are simpler are wrong, since workflows can use tools and models too (M7)."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "With a fixed path the number of model calls per request is known, so cost and delay are predictable, which matters on a small budget. A workflow still calls a model (a, M9), workflows and agents can both use search tools (b, M10), and neither is better on every task (c, M8).",
+      "distractors": {"a": "M9", "b": "M10", "c": "M8"}
+    },
+    {
+      "id": "q5",
+      "answer": 600,
+      "tolerance": 0,
+      "rationale": "The difference per question is 5 - 2 = 3 calls, and 3 x 200 = 600. An answer of 1000 or 400 is the agent's or the workflow's total alone, not the difference."
+    },
+    {
+      "id": "q6",
+      "answer": "The steps needed cannot be known in advance, because they depend on what earlier results turn up.",
+      "accepted": [
+        "The task is open-ended and the steps can't be predicted or written in advance",
+        "The path depends on intermediate results so the model must decide the steps",
+        "It is hard or impossible to hardcode the steps ahead of time",
+        "The number and order of steps is unpredictable"
+      ],
+      "rationale": "Agents earn their extra cost and delay when the path cannot be fixed beforehand. Answers like \"the task is hard\" or \"it is important\" miss the point: a hard task with known steps still suits a workflow (M8)."
+    }
+  ]
+}

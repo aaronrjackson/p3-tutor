@@ -1,0 +1,11 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "지수는 남동생보다 더 빨라요",
+      "accepted": ["지수는 남동생보다 더 빨라요.", "지수는 남동생보다 빨라요", "지수는 남동생보다 빨라요.", "지수가 남동생보다 더 빨라요", "지수가 남동생보다 더 빨라요.", "지수가 남동생보다 빨라요", "지수는 내 남동생보다 더 빨라요", "지수는 제 남동생보다 더 빨라요"],
+      "rationale": "지수는 is the topic, the faster one. 남동생보다 means 'than younger brother', with 보다 attached and no space. 더 is optional. 빨라요 is the sentence form of 빠르다. An answer with 지수 and 남동생 swapped reverses the sides (M4). An answer with 남동생은 지수보다 shows M4. An answer with 가장 and 보다 together shows M3."
+    }
+  ]
+}

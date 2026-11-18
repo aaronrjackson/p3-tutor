@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In a workflow, what decides the order of the steps?",
+      "options": [
+        {"id": "a", "text": "The model chooses each next step while it runs"},
+        {"id": "b", "text": "Code that the developer wrote sets the steps ahead of time"},
+        {"id": "c", "text": "The student picks each next step during the chat"},
+        {"id": "d", "text": "The tool descriptions fix the order of the steps"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "Your code always runs check_calendar first, then calls the model once to write the answer. Is this a workflow or an agent?"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Booking a machine always needs the same three steps in the same order: check the calendar, check the training record, then book. Which design fits best?",
+      "options": [
+        {"id": "a", "text": "An agent that picks the tools and their order each time"},
+        {"id": "b", "text": "Three agents, one for each step, that work together"},
+        {"id": "c", "text": "A fixed workflow that runs the three steps in that order"},
+        {"id": "d", "text": "An agent with a larger context window to hold more"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Why does a fixed workflow often cost less per request than an agent doing the same task?",
+      "options": [
+        {"id": "a", "text": "Code sets the steps, so no model calls choose them"},
+        {"id": "b", "text": "Workflows skip tools, so no tool results enter context"},
+        {"id": "c", "text": "Workflows never call a model, so they use no tokens"},
+        {"id": "d", "text": "Workflows reuse answers from earlier students' requests"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which request needs an agent more than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Send the same reminder to every student with a booking"},
+        {"id": "b", "text": "Show the opening hours of the 3D printer room"},
+        {"id": "c", "text": "Reformat a booking time from 24-hour to 12-hour"},
+        {"id": "d", "text": "Find a free slot for a vague plan on any machine"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A workflow makes exactly 2 model calls per request. An agent makes 5 on average. For 100 requests, how many more model calls does the agent make?",
+      "unit": "model calls"
+    }
+  ]
+}

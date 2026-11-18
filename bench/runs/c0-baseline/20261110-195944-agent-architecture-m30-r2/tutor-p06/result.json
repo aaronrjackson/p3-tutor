@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 25651,
+  "stop_reason": "end_turn",
+  "session_id": "4ef2f45a-0ab2-44c5-a4f6-598298da9715",
+  "total_cost_usd": 0.1414122,
+  "usage": {
+    "input_tokens": 10,
+    "cache_creation_input_tokens": 25505,
+    "cache_read_input_tokens": 133522,
+    "output_tokens": 2602,
+    "output_tokens_details": {
+      "thinking_tokens": 1203
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 25505,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 583,
+        "cache_read_input_tokens": 34970,
+        "cache_creation_input_tokens": 1171,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 1171
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 2602,
+      "cacheReadInputTokens": 133522,
+      "cacheCreationInputTokens": 25505,
+      "webSearchRequests": 0,
+      "costUSD": 0.1414122,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1203,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 25505,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 10,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Here's a new way to look at it.\n\n**Picture a writer in a sealed office.** The room has a desk, paper, and a slot in the door. There's no phone and no internet. The writer is smart, but the only things they know are what's on the desk.\n\nOn the door is a **menu of services**, for example: \"Booking desk: give me a machine and a date, and I'll tell you what's reserved.\" The writer can read the menu, but they can't see how the booking desk works. They only know what each service is called and what it needs from them.\n\nA student slides a question under the door. The writer can't look anything up, so they write a **slip** that says \"Booking desk: laser cutter, Friday.\" They post it through the slot and wait.\n\nA **clerk** outside takes the slip, walks to the real booking desk, does the lookup, and slides the answer back in. The writer reads it, adds it to the pile on the desk, and then does one of two things. They write another slip, or they write the final reply to the student.\n\n- **Tool calling** is this slip-and-slot arrangement.\n- **The writer** is the model. It only produces text, and some of that text is a slip.\n- **The clerk** is your program. It does the real work.\n- **The menu** is the tool descriptions. The writer picks a service from the menu alone.\n\n**Where the analogy breaks:** a real model doesn't remember the last slip. Each time, the clerk hands it the whole pile again, so it's like a fresh writer reading the full pile every time.\n\nTry this: in your own words, which jobs in the office does the writer never do?\n\nYour quiz 0001 covers this topic and hasn't been graded yet, so I kept this general. If you'd like, I can grade both attempts, and then we can go through any items together. If the analogy still leaves something fuzzy, tell me which part, and I can turn it into a short lesson.",
+  "ttft_ms": 1117,
+  "type": "result",
+  "duration_ms": 25845,
+  "uuid": "52cc5b8e-659b-4390-bff6-b11cf2577911",
+  "ttft_stream_ms": 1029,
+  "time_to_request_ms": 102,
+  "first_content_frame_ms": 1029,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 10,
+      "outputTokens": 2602,
+      "cacheReadInputTokens": 133522,
+      "cacheCreationInputTokens": 25505,
+      "webSearchRequests": 0,
+      "costUSD": 0.1414122,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1203,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 25505,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-16T13:12:30.737Z"
+}

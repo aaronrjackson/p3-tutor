@@ -18,11 +18,38 @@ An example of a finished entry:
 - Kept in final: yes
 -->
 
-### TODO: the component's name
+### teach
 
-- Kind: TODO
-- Step added: TODO
-- Purpose: TODO
-- With and without: TODO
-- Review: TODO
+- Kind: skill
+- Step added: c1-skills
+- Purpose: The tutor needs this skill to best understand how to best teach a lesson to a user in a style that they understand and agree with. It is a skill because the user is interacting with one agent, and this agent needs all the context that a subagent wouldn't have.
+- With and without: reviews/c1-skills.md, Round 1 (without) and Round 2 (with)
+- Review: It's good. The mid-lesson quizzes are really effective at retention, analogies are clear and understandable, explanations are short and concise, nuance is clear and unambiguous. The main difference is the original output was maybe more verbose or ambiguous with its wording.
+- Kept in final: TODO
+
+### tutor
+
+- Kind: skill
+- Step added: c1-skills
+- Purpose: The tutor needs this skill to best understand how to answer the questions a student has about a topic concisely. It is a skill because the user is interacting with one agent, and this agent needs all the context that a subagent wouldn't have.
+- With and without: reviews/c1-skills.md, Round 4 (without) and Round 5 (with)
+- Review: The replies used to run ~220+ words, against a limit of 200. This was a failure. The new output fixes this, and seemingly reliably will now reply in <200 words. As well, it now never specifically mentions 
+- Kept in final: TODO
+
+### quiz
+
+- Kind: skill
+- Step added: c1-skills
+- Purpose: The tutor needs this skill to best understand how to produce a quiz that is useful and understandable for the user. It is a skill because the user is interacting with one agent, and this agent needs all the context that a subagent wouldn't have.
+- With and without: reviews/c1-skills.md, Round 5 (without) and Round 6 (with)
+- Review: Quizzes now offer shorter questions that are more concise and unambiguous to understand.
+- Kept in final: TODO
+
+### grade
+
+- Kind: skill
+- Step added: c1-skills
+- Purpose: The tutor needs this skill to best understand how to grade a user's quiz and offer feedback that expresses what they did right or did wrong. It is a skill because the user is interacting with one agent, and this agent needs all the context that a subagent wouldn't have.
+- With and without: reviews/c1-skills.md, Round 6 (without) and the major review (with)
+- Review: Pretty much unchanged.
 - Kept in final: TODO

@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. What makes it an agent is the loop: the model picks an action, the program runs it, and the result comes back for the next step. A longer prompt or a bigger model changes what one call can do, but it doesn't change that structure."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The model only outputs a request that names check_calendar and gives its arguments (laser cutter, tomorrow's date). The program around it runs the tool. This is better than your first attempt, where you picked the option saying the model opens the booking system itself."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "You picked 'left to run longer, it will eventually fix the bug'. That's tempting because more steps feel like more chances. But this agent is getting the same failing result 40 times, so step 41 will be the same as step 40. The loop needs a stopping condition, such as a step limit that ends it and reports back to a person. You answered this correctly last time, so check why you changed your mind."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "Your count of 4 is right: three tool requests plus the final answer, one model call each. Your reasoning is off, though. The model doesn't run check_calendar or the other tools. Each call ends with a request, the program runs the tool, and the result goes into the next call. Counting calls works because each input (the question, then three results) triggers one model call."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The result goes back in as part of the model's next input, and the model uses it to decide its next step. The group-chat comparison fits: a reply arrives, and the model takes its next turn with it in front of it. The one addition is that the program is what calls the model again."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name matters, but it isn't the whole story. The model is given a description for each tool: its name, what it does and the parameters it takes. It picks the tool whose description fits the request. A name alone can mislead. A tool called check_calendar that really checks machine bookings only works if its description says so. This is the same skill you need to write good descriptions for your own tools."
+    }
+  ],
+  "summary": "You have the loop itself (q1), what the model outputs for a tool call (q2), and what happens to a tool result (q5). Compared with your first attempt, you no longer believe the model reads the booking system itself. Two things need work. First, q4 shows the model-runs-the-tools belief again: the model only requests, and the program runs. Second, q3 needs a stopping condition for a loop that repeats itself. Next step: trace the laser-cutter request on paper, writing 'model output' and 'program action' as separate lines for each of the four calls. Then tell me where a step limit would go. After that we can move on to context and memory."
+}

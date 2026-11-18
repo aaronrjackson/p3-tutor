@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your makerspace assistant handles one request in four model calls. What does the model receive as input for the fourth call?",
+      "options": [
+        {"id": "a", "text": "Only the result of the third tool call, since it recalls the rest"},
+        {"id": "b", "text": "The whole conversation so far: the question, each request and result"},
+        {"id": "c", "text": "Only the student's question, because tool results are kept inside the model"},
+        {"id": "d", "text": "A private summary the model stored inside itself after its third call"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Next semester the assistant must know which machines each student has been trained on, even for students who last used it months ago. Which design achieves that?",
+      "options": [
+        {"id": "a", "text": "Choose a model whose context window is large enough for a semester"},
+        {"id": "b", "text": "Add to the instructions: remember every student's training from now on"},
+        {"id": "c", "text": "Save a record per student, and load it into each new session"},
+        {"id": "d", "text": "Keep one chat open all semester so earlier visits stay available"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Each model call is given the instructions and tool descriptions (1,000 tokens) plus every tool result so far. A request makes three tool calls, each returning 500 tokens, and then the model writes its final answer, so there are four model calls. Ignore the question and the answer's length. How many tokens in total does the model read across the four calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A teammate says: a new model has a context window five times larger, so we can drop search and paste every machine manual into every request. Which is the best objection?",
+      "options": [
+        {"id": "a", "text": "The manuals would be paid for at every call and could blur recall"},
+        {"id": "b", "text": "A model cannot read text that was pasted into its context window"},
+        {"id": "c", "text": "A larger window is only used when search results fill it first"},
+        {"id": "d", "text": "A larger window already makes the model remember manuals for later"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "When a long conversation is compacted (summarized so a fresh context can start from the summary), what is the main risk, in one sentence?"
+    }
+  ]
+}

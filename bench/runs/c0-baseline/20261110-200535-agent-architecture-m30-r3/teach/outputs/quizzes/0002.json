@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student chats with your makerspace assistant for ten minutes, and the assistant keeps track of everything said. What makes this possible?",
+      "options": [
+        {"id": "a", "text": "The program sends the earlier messages to the model on every call"},
+        {"id": "b", "text": "The model updates itself with each message so that it learns the chat"},
+        {"id": "c", "text": "The model keeps a private store of messages between its calls"},
+        {"id": "d", "text": "The context window is a permanent store that is never emptied"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "The instructions and tool descriptions take 2,000 tokens and the student's question takes 100. Call 1 sends these and the model replies with a 50-token tool request. The tool returns a 400-token result, and call 2 sends everything so far and returns the final answer. Counting only input tokens, how many tokens were sent across the two calls in total?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant should greet a returning student with the machines they completed training on last month. Which design provides this?",
+      "options": [
+        {"id": "a", "text": "Choose a model whose context window is large enough to last a month"},
+        {"id": "b", "text": "Keep that student's old conversation open and continue it next visit"},
+        {"id": "c", "text": "Store a record outside the model and load it when the visit starts"},
+        {"id": "d", "text": "Put every student's training list into the shared instructions text"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A teammate suggests pasting all twelve machine manuals into the assistant's instructions so it never needs to search. Give one reason, in a sentence, this is a poor idea for your assistant."
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A long scheduling task has nearly filled the context window, and the agent must continue the same task. Which technique fits best?",
+      "options": [
+        {"id": "a", "text": "Delete the system instructions so the window has room again"},
+        {"id": "b", "text": "Summarize the work so far, then continue in a fresh window"},
+        {"id": "c", "text": "Restart the task from nothing and discard all progress so far"},
+        {"id": "d", "text": "Send the rest of the task to the model without any context"}
+      ]
+    }
+  ]
+}

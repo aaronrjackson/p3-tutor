@@ -39,7 +39,8 @@ When no length is asked for, use the one `PREFERENCES.md` implies, or 15 minutes
 
 1. **Opening:** the title, the time, the win in one sentence ("By the end of this lesson you can ..."), and one or two sentences tying it to the mission.
 2. **Warm-up:** one or two recall questions on earlier material from the learning records, for spacing, with the answers revealed on demand.
-3. **Sections, one idea each,** in a steady rhythm: explain only the knowledge the skill needs, in plain words; show a concrete example, drawn from the examples `PREFERENCES.md` says the learner relates to; then check with a practice question that gives immediate feedback.
+3. **Sections, one idea each,** in a steady rhythm: explain only the knowledge the skill needs, in plain words; show a concrete example, drawn from the examples `PREFERENCES.md` says the learner relates to; then give the nuances of the idea as a labeled list ("Nuance 1: ...", "Nuance 2: ...", "Nuance 3: ..."), each one short and clear, with a tiny example where it helps; then check with a practice question that gives immediate feedback.
+   Every section has its nuance list after its example, as the learner asked.
 4. **Misconceptions where they bite:** name the common wrong ideas about this objective (from `NOTES.md`, the learning records, the keys' distractors and your sources), say why each is tempting, and show with an example why it is wrong.
 5. **Worked example, then practice:** a worked example step by step, then a similar task for the learner with the steps faded, and the solution on demand.
 6. **Summary:** the key ideas in three to five lines, and a prompt to explain the main idea in their own words before moving on.
@@ -49,6 +50,16 @@ When no length is asked for, use the one `PREFERENCES.md` implies, or 15 minutes
 ## Knowledge and skills
 
 - Teach only the knowledge the skill needs, and make it easy to take in: plain words, one new term at a time, each defined where it first appears, using the terms in `GLOSSARY.md` when it exists.
+- Give every section at least one worked example, and add an analogy to the example whenever one fits well.
+  Keep the examples and analogies that map well.
+  A rule below that removes a bad analogy must not leave a section with no example.
+- Use an analogy only when it maps part for part to the idea.
+  Name each part of the analogy and the part of the idea it matches, and say where the analogy stops working.
+  Make the analogy concrete with one specific everyday situation and numbers, so the learner cannot read it two ways.
+  Drop an analogy that needs a vague phrase such as "like paper on a desk".
+- Every example must show the idea it names.
+  An example title that names a scenario, such as a question or a case, must use that scenario in every step.
+  If an example does not use the scenario, retitle it with what it really shows.
 - Then make the skill stick with effortful practice: recall, worked examples followed by faded ones, and applying the idea to a new case.
 - Every practice question gets feedback at once: why the right answer is right, and why each tempting wrong answer is wrong.
 - For a multiple-choice question, give every option the same number of words (and characters, if possible), vary which position holds the right one, and never give it away by formatting or order.

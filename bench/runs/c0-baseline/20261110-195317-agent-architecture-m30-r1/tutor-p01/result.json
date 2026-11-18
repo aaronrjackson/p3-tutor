@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 12544,
+  "stop_reason": "end_turn",
+  "session_id": "27868970-5fc7-44da-a993-b7054636e0fa",
+  "total_cost_usd": 0.11701149999999999,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 24179,
+    "cache_read_input_tokens": 66735,
+    "output_tokens": 1361,
+    "output_tokens_details": {
+      "thinking_tokens": 284
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 24179,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 426,
+        "cache_read_input_tokens": 34385,
+        "cache_creation_input_tokens": 430,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 430
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1361,
+      "cacheReadInputTokens": 66735,
+      "cacheCreationInputTokens": 24179,
+      "webSearchRequests": 0,
+      "costUSD": 0.11701149999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 284,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 24179,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't give you the letter for q3. I don't hand out quiz answers before a submission is graded, and that includes retakes. I'm not doubting you. The quiz only tells you something if the answer comes from you. I also don't want to nudge you toward one option by ruling others out.\n\nHere is a way to work it out yourself. It's the same test for every option, so it doesn't favor any of them.\n\n1. **Describe the failure in one sentence.** Look only at the stem. What exactly is going wrong at step 40, and what does the agent have in front of it?\n2. **Ask what each option changes at step 41.** For each of the four, would the agent's next move be any different? Would anything stop the repetition, or would the loop just run on as before?\n3. **Check what each option does for your budget.** Your mission says cost per request matters. Picture each option running unattended against the sponsor's model budget, and ask which one you'd be comfortable defending at a design review.\n\nTry that and tell me your reasoning for the one you lean toward and the one you like least. I'll say plainly where your logic holds and where it doesn't.\n\nQuiz 0001 hasn't been graded yet, so I can't walk through the item with you right now. If you'd like, I can grade your submissions next. After that we can go through q3 in full, and you can read up on the why with the answer in hand.",
+  "ttft_ms": 1989,
+  "type": "result",
+  "duration_ms": 12694,
+  "uuid": "a458b242-d032-44c0-8fad-4cb52b287765",
+  "ttft_stream_ms": 1037,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 1037,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1361,
+      "cacheReadInputTokens": 66735,
+      "cacheCreationInputTokens": 24179,
+      "webSearchRequests": 0,
+      "costUSD": 0.11701149999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 284,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 24179,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-16T13:12:30.737Z"
+}

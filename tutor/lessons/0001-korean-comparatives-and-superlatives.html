@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="p3-minutes" content="15">
+  <meta name="p3-objective" content="O1">
+  <title>Comparing in Korean: more than, and the most</title>
+  <style>
+    :root {
+      --bg: #fffdf8;
+      --text: #1f1d1a;
+      --muted: #6b665e;
+      --rule: #e4dfd4;
+      --accent: #9a4517;
+      --accent-soft: #f7ede4;
+      --warn: #8c2f39;
+      --warn-soft: #f9eaec;
+      --ok: #2f6b3a;
+      --ok-soft: #e7f2e9;
+      --code-bg: #f3efe6;
+      --serif: Charter, "Bitstream Charter", "Iowan Old Style", "Sitka Text", Cambria, Georgia, serif;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #171614;
+        --text: #e9e5dc;
+        --muted: #a49e93;
+        --rule: #36332e;
+        --accent: #eaa77a;
+        --accent-soft: #2c231d;
+        --warn: #f0a3ac;
+        --warn-soft: #2f1f22;
+        --ok: #9fd3a8;
+        --ok-soft: #1c2a1f;
+        --code-bg: #23211e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { font-size: 19px; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--serif); line-height: 1.6; }
+    main { max-width: 40rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+    p, li { hyphens: auto; }
+    a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+    h1, h2, h3 { line-height: 1.25; font-weight: 600; }
+    h1 { font-size: 2.1rem; margin: 0.25rem 0 1rem; }
+    h2 { font-size: 1.45rem; margin: 3rem 0 0.75rem; }
+    h3 { font-size: 1.1rem; margin: 2rem 0 0.5rem; }
+    .kicker, .label, .meta, .section-time, figcaption, summary, th, nav.toc, footer.closing {
+      font-family: var(--sans);
+    }
+    .kicker { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .lead { font-size: 1.15rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; font-size: 0.85rem; color: var(--muted);
+            border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 0.5rem 0; margin: 1.5rem 0; }
+    nav.toc { font-size: 0.9rem; margin: 1.5rem 0 2rem; }
+    nav.toc ol { padding-left: 1.2rem; margin: 0.4rem 0 0; }
+    .section-time { font-size: 0.8rem; font-weight: 400; color: var(--muted); margin-left: 0.4rem; white-space: nowrap; }
+    dfn { font-style: normal; font-weight: 600; }
+    aside.note { font-size: 0.9rem; color: var(--muted); border-left: 2px solid var(--rule); padding-left: 1rem; margin: 1.25rem 0; }
+    .box { border-radius: 6px; padding: 1rem 1.25rem; margin: 1.75rem 0; }
+    .box > :first-child { margin-top: 0; }
+    .box > :last-child { margin-bottom: 0; }
+    .label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.4rem; }
+    .mission { background: var(--accent-soft); }
+    .mission .label { color: var(--accent); }
+    .misconception { background: var(--warn-soft); border-left: 4px solid var(--warn); }
+    .misconception .label { color: var(--warn); }
+    .worked { border: 1px solid var(--rule); }
+    .worked ol { padding-left: 1.3rem; }
+    .summary { border: 1px solid var(--rule); }
+    figure { margin: 2rem 0; }
+    figure svg { display: block; width: 100%; height: auto; }
+    figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 1.5rem 0; }
+    th, td { text-align: left; vertical-align: top; padding: 0.45rem 0.6rem; border-bottom: 1px solid var(--rule); }
+    th { font-size: 0.78rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted); }
+    code, pre { font-family: var(--mono); font-size: 0.85em; background: var(--code-bg); border-radius: 4px; }
+    code { padding: 0.1em 0.3em; }
+    pre { padding: 1rem; overflow-x: auto; line-height: 1.45; }
+    pre code { padding: 0; background: none; font-size: 1em; }
+    .ko { font-size: 1.15em; font-weight: 600; }
+    .ex { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid var(--accent); }
+    .ex p { margin: 0.1rem 0; }
+    .ex .rom { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+    .check { border: 1px solid var(--rule); border-radius: 6px; padding: 1rem 1.25rem; margin: 1.75rem 0; }
+    .check .label { color: var(--accent); }
+    .check p { margin: 0.25rem 0; }
+    .choices { list-style: none; padding: 0; margin: 0.75rem 0 0; display: grid; gap: 0.5rem; }
+    .choices button { width: 100%; text-align: left; font: inherit; font-size: 0.95rem; color: inherit; background: transparent;
+                      border: 1px solid var(--rule); border-radius: 6px; padding: 0.55rem 0.8rem; cursor: pointer; }
+    .choices button:hover { border-color: var(--accent); }
+    .choices button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .choices button.right { border-color: var(--ok); background: var(--ok-soft); }
+    .choices button.wrong { border-color: var(--warn); background: var(--warn-soft); }
+    .feedback { font-size: 0.95rem; margin: 0.6rem 0 0; }
+    .feedback:empty { margin: 0; }
+    details { margin-top: 0.75rem; }
+    summary { font-size: 0.85rem; color: var(--accent); cursor: pointer; }
+    details > :not(summary) { margin: 0.5rem 0 0; }
+    .go-further li { margin-bottom: 0.6rem; }
+    footer.closing { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.9rem; color: var(--muted); }
+    @media (max-width: 32rem) {
+      html { font-size: 17px; }
+      h1 { font-size: 1.75rem; }
+      main { padding-top: 2rem; }
+    }
+    @media print {
+      :root { --bg: #fff; --text: #000; --muted: #444; --rule: #ccc; --accent: #000; --accent-soft: #f2f2f2;
+              --warn: #000; --warn-soft: #f2f2f2; --ok: #000; --ok-soft: #fff; --code-bg: #f2f2f2; }
+      html { font-size: 11.5pt; }
+      main { max-width: none; padding: 0; }
+      nav.toc { display: none; }
+      a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; word-break: break-all; }
+      .box, .check, figure, table, pre { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <header>
+    <div class="kicker">Lesson 1 &middot; 15 minutes</div>
+    <h1>Comparing in Korean: more than, and the most</h1>
+    <p class="lead">By the end of this lesson you can say "I am prettier than you" and "He is faster than his brother" in Korean. You can also say who is the most something.</p>
+    <div class="meta">
+      <span>Objective O1: comparatives and superlatives</span>
+      <span>About 15 minutes</span>
+      <span>Starting point: no Korean words</span>
+    </div>
+    <div class="box mission">
+      <span class="label">Why this matters for you</span>
+      <p>You want to compare people in Korean. All such sentences use one short pattern. Learn the pattern once. Then reuse it with any adjective.</p>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="In this lesson">
+    <strong>In this lesson</strong>
+    <ol>
+      <li><a href="#words">The words you need</a></li>
+      <li><a href="#comparative">More than: 보다 and 더</a></li>
+      <li><a href="#superlative">The most: 제일 and 가장</a></li>
+      <li><a href="#mixups">Common mix-ups</a></li>
+      <li><a href="#practice">Worked example and practice</a></li>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#further">Go further</a></li>
+    </ol>
+  </nav>
+
+  <section id="words">
+    <h2>The words you need <span class="section-time">4 min</span></h2>
+    <p>You start with no Korean words, so this section gives every word you need. Korean uses its own alphabet, Hangul. Each word below has a sound guide in English letters. The sound guide is only a help. Learn to read the Hangul as soon as you can.</p>
+
+    <h3>People words</h3>
+    <table>
+      <thead><tr><th>Korean</th><th>Sound</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td class="ko">저</td><td>jeo</td><td>I (polite). Use it with people you just met and with older people.</td></tr>
+        <tr><td class="ko">너</td><td>neo</td><td>you (casual). Use it only with close friends of your age or younger.</td></tr>
+        <tr><td class="ko">그</td><td>geu</td><td>he</td></tr>
+        <tr><td class="ko">형</td><td>hyeong</td><td>older brother, when a man says it</td></tr>
+        <tr><td class="ko">남동생</td><td>namdongsaeng</td><td>younger brother</td></tr>
+        <tr><td class="ko">지수</td><td>Jisu</td><td>a common Korean name. This lesson uses it as an example person.</td></tr>
+        <tr><td class="ko">사과</td><td>sagwa</td><td>apple</td></tr>
+        <tr><td class="ko">오렌지</td><td>orenji</td><td>orange</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Quality words (adjectives)</h3>
+    <p>A Korean adjective works like a verb. <span class="ko">예뻐요</span> means "is pretty". So <span class="ko">저는 예뻐요</span> means "I am pretty". Korean has no extra word for "am" or "is".</p>
+    <p>The ending <span class="ko">-요</span> makes the sentence polite. Use the polite style with people you do not know well.</p>
+    <p>A dictionary lists an adjective in a form that ends in <span class="ko">다</span>. The form you say in a sentence is different. The stem changes. Learn the sentence form as one whole word.</p>
+    <table>
+      <thead><tr><th>Dictionary form</th><th>Sentence form</th><th>Sound</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td class="ko">예쁘다</td><td class="ko">예뻐요</td><td>yeppeoyo</td><td>is pretty or beautiful</td></tr>
+        <tr><td class="ko">빠르다</td><td class="ko">빨라요</td><td>ppallayo</td><td>is fast</td></tr>
+        <tr><td class="ko">크다</td><td class="ko">커요</td><td>keoyo</td><td>is big</td></tr>
+      </tbody>
+    </table>
+
+    <h3>The comparison words</h3>
+    <table>
+      <thead><tr><th>Korean</th><th>Sound</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td class="ko">보다</td><td>boda</td><td>than</td></tr>
+        <tr><td class="ko">더</td><td>deo</td><td>more</td></tr>
+        <tr><td class="ko">제일</td><td>jeil</td><td>the most</td></tr>
+        <tr><td class="ko">가장</td><td>gajang</td><td>the most (same meaning as 제일)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>One small marker: 는 and 은</h3>
+    <p>A <dfn>marker</dfn> is a small word that attaches to the end of a noun. It tells the listener the job of that noun in the sentence. The marker <span class="ko">는</span> or <span class="ko">은</span> marks the topic. The topic is the thing you talk about.</p>
+    <ol>
+      <li>After a word that ends in a vowel sound, use <span class="ko">는</span>: <span class="ko">저는</span>, <span class="ko">너는</span>, <span class="ko">그는</span>, <span class="ko">지수는</span>, <span class="ko">사과는</span>.</li>
+      <li>After a word that ends in a consonant sound, use <span class="ko">은</span>: <span class="ko">형은</span>, <span class="ko">남동생은</span>.</li>
+    </ol>
+    <div class="ex">
+      <p class="ko">저는 예뻐요.</p>
+      <p class="rom">jeoneun yeppeoyo</p>
+      <p>I am pretty.</p>
+    </div>
+  </section>
+
+  <section id="comparative">
+    <h2>More than: 보다 and 더 <span class="section-time">5 min</span></h2>
+    <p>A <dfn>comparative</dfn> says one thing has more of a quality than another thing. English changes the adjective: "prettier", "faster". Korean does not change the adjective. Korean adds two small words around it. They are <span class="ko">보다</span> ("than") and <span class="ko">더</span> ("more"). (<a href="https://migaku.com/blog/korean/korean-comparatives-how-to-make-comparisons">Migaku</a>, <a href="https://www.howtostudykorean.com/unit1/unit-1-lessons-17-25-2/lesson-19/">How to Study Korean</a>.)</p>
+
+    <figure>
+      <svg viewBox="0 0 640 190" role="img" aria-labelledby="fig1-title">
+        <title id="fig1-title">The Korean comparison pattern in four boxes, with an English meaning under each box</title>
+        <g fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="10" y="30" width="140" height="70" rx="8"/>
+          <rect x="165" y="30" width="140" height="70" rx="8" style="stroke: var(--accent)"/>
+          <rect x="320" y="30" width="140" height="70" rx="8"/>
+          <rect x="475" y="30" width="155" height="70" rx="8"/>
+        </g>
+        <g fill="currentColor" font-family="system-ui, sans-serif" font-size="22" text-anchor="middle">
+          <text x="80" y="72">저는</text>
+          <text x="235" y="72" style="fill: var(--accent)">너보다</text>
+          <text x="390" y="72">더</text>
+          <text x="552" y="72">예뻐요</text>
+        </g>
+        <g fill="currentColor" font-family="system-ui, sans-serif" font-size="18" text-anchor="middle">
+          <text x="80" y="135">I (topic)</text>
+          <text x="235" y="135" style="fill: var(--accent)">you + than</text>
+          <text x="390" y="135">more</text>
+          <text x="552" y="135">is pretty</text>
+          <text x="320" y="175">Topic + Other보다 + 더 + adjective</text>
+        </g>
+      </svg>
+      <figcaption>Figure 1. The word 보다 sits right after the thing you compare against. It does not stand alone.</figcaption>
+    </figure>
+
+    <p>The pattern has four parts, in this order:</p>
+    <ol>
+      <li>The topic with <span class="ko">는/은</span>. This is the thing you say has more.</li>
+      <li>The other thing with <span class="ko">보다</span> attached. This is the thing you compare against.</li>
+      <li><span class="ko">더</span>.</li>
+      <li>The adjective in its sentence form.</li>
+    </ol>
+
+    <h3>Examples</h3>
+    <div class="ex">
+      <p class="ko">저는 너보다 더 예뻐요.</p>
+      <p class="rom">jeoneun neoboda deo yeppeoyo</p>
+      <p>I am prettier than you. Word for word: I, you-than, more, pretty.</p>
+    </div>
+    <div class="ex">
+      <p class="ko">그는 그의 형보다 더 빨라요.</p>
+      <p class="rom">geuneun geuui hyeongboda deo ppallayo</p>
+      <p>He is faster than his older brother. The word <span class="ko">의</span> works like "'s". So <span class="ko">그의 형</span> means "his older brother".</p>
+    </div>
+    <div class="ex">
+      <p class="ko">사과는 오렌지보다 더 커요.</p>
+      <p class="rom">sagwaneun orenjiboda deo keoyo</p>
+      <p>The apple is bigger than the orange.</p>
+    </div>
+    <div class="ex">
+      <p class="ko">형은 저보다 더 빨라요.</p>
+      <p class="rom">hyeongeun jeoboda deo ppallayo</p>
+      <p>My older brother is faster than I am.</p>
+    </div>
+
+    <h3>Nuances</h3>
+    <p><strong>Nuance 1: 보다 marks the weaker side.</strong> The word with 보다 is the thing that has less. In <span class="ko">너보다</span>, "you" has less prettiness than the topic.</p>
+    <p><strong>Nuance 2: No space before 보다.</strong> Write <span class="ko">너보다</span> as one word.</p>
+    <p><strong>Nuance 3: You can drop 더.</strong> <span class="ko">저는 너보다 예뻐요</span> is also correct. The 더 makes the "more" clear, so keep it while you learn. (<a href="https://migaku.com/blog/korean/korean-comparatives-how-to-make-comparisons">Migaku</a>)</p>
+    <p><strong>Nuance 4: Korean often drops "my" and "his".</strong> People say <span class="ko">그는 형보다 더 빨라요</span> when the owner is clear. Both forms are fine.</p>
+    <p><strong>Nuance 5: 덜 means "less".</strong> Use <span class="ko">덜</span> (deol) in the same place as 더. <span class="ko">저는 너보다 덜 빨라요</span> means "I am less fast than you". (<a href="https://www.howtostudykorean.com/unit1/unit-1-lessons-17-25-2/lesson-19/">How to Study Korean</a>)</p>
+    <p><strong>Nuance 6: Women say 오빠.</strong> A woman calls her older brother <span class="ko">오빠</span> (oppa). A man calls his older brother <span class="ko">형</span>. The pattern stays the same.</p>
+    <p><strong>Nuance 7: 너 is casual.</strong> Korean speakers often use a name instead of "you". Use <span class="ko">지수보다</span> for a friend named Jisu.</p>
+
+    <div class="check" data-check>
+      <span class="label">Check yourself</span>
+      <p>Where does 보다 go in a Korean comparison?</p>
+      <ul class="choices">
+        <li><button type="button" data-correct="false" data-why="That is the English order, 'than' before the noun. Korean puts the word after the noun.">Right before that noun</button></li>
+        <li><button type="button" data-correct="true" data-why="보다 attaches to the end of the thing you compare against, as in 너보다.">Right after that noun</button></li>
+        <li><button type="button" data-correct="false" data-why="The adjective ends the sentence. 보다 stays next to the noun it marks.">At the sentence end</button></li>
+      </ul>
+      <p class="feedback" aria-live="polite"></p>
+      <details>
+        <summary>Show the answer</summary>
+        <p>Right after that noun. Example: 너보다 means "than you".</p>
+      </details>
+    </div>
+
+    <div class="check" data-check>
+      <span class="label">Check yourself</span>
+      <p>Which sentence means "I am faster than my younger brother"?</p>
+      <ul class="choices">
+        <li><button type="button" data-correct="false" data-why="This puts the younger brother as the topic. It says he is faster than you.">남동생은 저보다 더 빨라요</button></li>
+        <li><button type="button" data-correct="false" data-why="The adjective 빠르다 needs its sentence form 빨라요. The form 빠르요 does not exist.">저는 남동생보다 더 빠르요</button></li>
+        <li><button type="button" data-correct="true" data-why="The topic is 저는. The compared side is 남동생보다. Then 더 and 빨라요.">저는 남동생보다 더 빨라요</button></li>
+      </ul>
+      <p class="feedback" aria-live="polite"></p>
+      <details>
+        <summary>Show the answer</summary>
+        <p>The third one. The topic (the faster one) comes first. The 보다 word names the slower one.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="superlative">
+    <h2>The most: 제일 and 가장 <span class="section-time">3 min</span></h2>
+    <p>A <dfn>superlative</dfn> says one thing has the most of a quality in a whole group. English adds "-est" or "the most". Korean puts <span class="ko">제일</span> or <span class="ko">가장</span> right before the adjective. Both words mean the same. (<a href="https://migaku.com/blog/korean/korean-comparatives-how-to-make-comparisons">Migaku</a>)</p>
+    <p>The pattern is: <strong>Topic + 제일/가장 + adjective</strong>. It has no 보다. A group is the standard, so you need no second noun to compare with.</p>
+
+    <h3>Examples</h3>
+    <div class="ex">
+      <p class="ko">지수는 제일 예뻐요.</p>
+      <p class="rom">jisuneun jeil yeppeoyo</p>
+      <p>Jisu is the prettiest.</p>
+    </div>
+    <div class="ex">
+      <p class="ko">형은 가장 빨라요.</p>
+      <p class="rom">hyeongeun gajang ppallayo</p>
+      <p>My older brother is the fastest.</p>
+    </div>
+    <div class="ex">
+      <p class="ko">저는 우리 반에서 제일 커요.</p>
+      <p class="rom">jeoneun uri baneseo jeil keoyo</p>
+      <p>I am the biggest in our class.</p>
+    </div>
+
+    <h3>Nuances</h3>
+    <p><strong>Nuance 1: Name the group with 에서.</strong> The word <span class="ko">우리</span> (uri) means "our". The word <span class="ko">반</span> (ban) means "class". The marker <span class="ko">에서</span> (eseo) means "in" or "at". So <span class="ko">우리 반에서</span> means "in our class". Put it before the adjective phrase.</p>
+    <p><strong>Nuance 2: You can use 이 or 가 instead of 는.</strong> Many superlative sentences use the marker <span class="ko">이/가</span> for the person. Use <span class="ko">가</span> after a vowel and <span class="ko">이</span> after a consonant. Example: <span class="ko">지수가 제일 예뻐요</span>. It means the same here.</p>
+    <p><strong>Nuance 3: Never mix 보다 with 제일 or 가장.</strong> "The most" already covers the whole group. Adding "than" makes the sentence awkward. (<a href="https://sublearn.com/learn/ko/grammar/chapter/making-comparisons">Sublearn</a>)</p>
+    <p><strong>Nuance 4: Use 더 for two, 제일 for a group.</strong> Use 보다 and 더 to compare one thing with one other thing. Use 제일 or 가장 to pick the top of three or more.</p>
+
+    <div class="check" data-check>
+      <span class="label">Check yourself</span>
+      <p>Which word makes "the most" in a Korean sentence?</p>
+      <ul class="choices">
+        <li><button type="button" data-correct="true" data-why="제일 (or 가장) goes before the adjective and means 'the most'.">제일</button></li>
+        <li><button type="button" data-correct="false" data-why="보다 means 'than'. It compares two things and does not pick a top one.">보다</button></li>
+        <li><button type="button" data-correct="false" data-why="더 means 'more'. It needs a second thing to compare with.">더</button></li>
+      </ul>
+      <p class="feedback" aria-live="polite"></p>
+      <details>
+        <summary>Show the answer</summary>
+        <p>제일. The word 가장 also works.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="mixups">
+    <h2>Common mix-ups <span class="section-time">1 min</span></h2>
+    <div class="box misconception">
+      <span class="label">A common mix-up</span>
+      <p><strong>"The adjective should change, as English adds -er and -est."</strong> This is tempting because English works this way. In Korean, the adjective stays the same for "pretty", "prettier" and "the prettiest". Compare: 저는 예뻐요 (I am pretty), 저는 너보다 더 예뻐요 (I am prettier than you), 저는 제일 예뻐요 (I am the prettiest). The small words 더, 보다 and 제일 do all the work.</p>
+    </div>
+    <div class="box misconception">
+      <span class="label">A common mix-up</span>
+      <p><strong>"보다 goes before the noun, like English 'than'."</strong> This is tempting because English says "than you". Korean says "you than". The word 보다 follows the noun. So "than you" is 너보다.</p>
+    </div>
+  </section>
+
+  <section id="practice">
+    <h2>Worked example and practice <span class="section-time">3 min</span></h2>
+    <div class="box worked">
+      <span class="label">Worked example</span>
+      <p>Say "Jisu is faster than I am."</p>
+      <ol>
+        <li>Pick the topic. Jisu has more speed, so Jisu is the topic: <span class="ko">지수는</span>. The name ends in a vowel, so use 는.</li>
+        <li>Pick the thing to compare against. This is "I", with 보다: <span class="ko">저보다</span>.</li>
+        <li>Add <span class="ko">더</span>.</li>
+        <li>Add the sentence form of "fast": <span class="ko">빨라요</span>.</li>
+        <li>Join the parts: <span class="ko">지수는 저보다 더 빨라요.</span></li>
+      </ol>
+    </div>
+    <div class="check">
+      <span class="label">Your turn</span>
+      <p>Say "I am bigger than my older brother." Step 1 is done for you: the topic is <span class="ko">저는</span>. Do steps 2 to 5 yourself. The word for "big" is <span class="ko">커요</span>.</p>
+      <details>
+        <summary>Show a solution</summary>
+        <p>Step 2: <span class="ko">형보다</span>. Step 3: <span class="ko">더</span>. Step 4: <span class="ko">커요</span>. Step 5: <span class="ko">저는 형보다 더 커요.</span></p>
+      </details>
+    </div>
+  </section>
+
+  <section id="summary">
+    <h2>Summary <span class="section-time">1 min</span></h2>
+    <div class="box summary">
+      <ul>
+        <li>Comparative: Topic + Other보다 + 더 + adjective.</li>
+        <li>Superlative: Topic + 제일 or 가장 + adjective.</li>
+        <li>The adjective does not change. The small words carry the meaning.</li>
+        <li>보다 sticks to the end of the thing you compare against.</li>
+      </ul>
+      <p><strong>Say it in your own words:</strong> Explain, without looking, how Korean says "I am prettier than you". Then explain what changes when you say "I am the prettiest".</p>
+    </div>
+  </section>
+
+  <section id="further" class="go-further">
+    <h2>Go further</h2>
+    <p><strong>Read next:</strong> <a href="https://www.howtostudykorean.com/unit1/unit-1-lessons-17-25-2/lesson-19/">How to Study Korean, Unit 1, Lesson 19</a>. It covers 더, 덜 and 보다 with many examples, and it is a free beginner course.</p>
+    <ul>
+      <li><a href="https://migaku.com/blog/korean/korean-comparatives-how-to-make-comparisons">Migaku: Korean Comparatives</a>: the pattern for comparatives and superlatives in one page.</li>
+      <li><a href="https://sublearn.com/learn/ko/grammar/chapter/making-comparisons">Sublearn: Making Comparisons</a>: a short chapter with practice sentences.</li>
+      <li><a href="https://www.learn-korean.net/lessons/intermediate/comparatives">Learn-Korean.net: Comparatives 더 and 가장</a>: a second view of 더 and 가장.</li>
+    </ul>
+    <p><strong>Test it with others:</strong> A Korean learner forum or a language exchange partner can check your sentences. Post three sentences with 보다 and ask for corrections.</p>
+  </section>
+
+  <footer class="closing">
+    <p>Anything unclear? Ask me in the chat. I can explain any part again, another way, or go deeper.</p>
+    <p>A short quiz on this lesson is ready (quiz 0001). Ask me for it when you want to check what stuck.</p>
+  </footer>
+
+</main>
+<script>
+  document.querySelectorAll("[data-check]").forEach(function (box) {
+    var buttons = box.querySelectorAll("button[data-correct]");
+    var out = box.querySelector(".feedback");
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        buttons.forEach(function (b) { b.classList.remove("right", "wrong"); });
+        var right = button.getAttribute("data-correct") === "true";
+        button.classList.add(right ? "right" : "wrong");
+        if (out) { out.textContent = (right ? "Yes. " : "Not quite. ") + (button.getAttribute("data-why") || ""); }
+      });
+    });
+  });
+</script>
+</body>
+</html>

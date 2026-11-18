@@ -1,0 +1,48 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The difference is who owns the control flow: in a workflow the developer's code fixes the sequence of steps in advance, and in an agent the model decides the next step at run time. Both can call tools (a) and either can have memory (d); model size (b) is unrelated."
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "The program decides every step (search, paste, one model call), so this is a workflow even though a model writes the answer and retrieval is used. Using a model (a) or looking things up (c) does not make a system an agent; what matters is that the model does not choose the steps. A one-call workflow is still a workflow (d)."
+    },
+    {
+      "id": "q3",
+      "answer": 30,
+      "tolerance": 0.5,
+      "rationale": "The agent makes 5 - 2 = 3 extra calls per request; 3 x $0.01 x 1,000 requests = $30. Answering 50 or 20 costs only one system, not the difference."
+    },
+    {
+      "id": "q4",
+      "answer": "d",
+      "rationale": "Booking with machine, date and time given always follows the same steps (check the calendar, book, confirm), so code can own the flow, which is cheaper and more predictable. The other tasks need an unknown number and order of lookups that depend on what earlier results show, which is where an agent pays off."
+    },
+    {
+      "id": "q5",
+      "answer": "decide its own next step based on what it finds",
+      "accepted": [
+        "choose its own steps",
+        "choose its next step",
+        "decide the next step itself",
+        "decide the next step",
+        "decide its next step",
+        "choose its own next step based on results",
+        "adapt its steps to what it finds",
+        "decide what to do next",
+        "pick its own path",
+        "the model chooses the steps"
+      ],
+      "rationale": "An agent's model chooses the steps, their order and when to stop, based on intermediate results, so it can handle cases the developer did not script. A workflow can also call tools and models, so tool use alone is not the answer."
+    },
+    {
+      "id": "q6",
+      "answer": "a",
+      "rationale": "Booking has known steps, so a workflow is cheaper and more predictable; manual questions vary, so an agent's flexibility is worth its extra model calls. Workflows are not better everywhere (c), since open-ended tasks need flexibility, and an agent for everything (b, d) pays for flexibility on steps that never change and is less predictable there."
+    }
+  ]
+}

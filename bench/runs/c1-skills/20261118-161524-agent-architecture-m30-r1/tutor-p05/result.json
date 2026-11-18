@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 14459,
+  "stop_reason": "end_turn",
+  "session_id": "a7547f70-707b-4295-9280-ccf0413652c3",
+  "total_cost_usd": 0.10329809999999999,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 20361,
+    "cache_read_input_tokens": 59821,
+    "output_tokens": 1586,
+    "output_tokens_details": {
+      "thinking_tokens": 586
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20361,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 364,
+        "cache_read_input_tokens": 30274,
+        "cache_creation_input_tokens": 871,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 871
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1586,
+      "cacheReadInputTokens": 59821,
+      "cacheCreationInputTokens": 20361,
+      "webSearchRequests": 0,
+      "costUSD": 0.10329809999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 586,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 20361,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "You do not need PPO for your assistant. Training models is out of scope in your mission, and the reason is practical.\n\nYour premise is partly true. Labs use reinforcement learning (RL) to train base models to use tools well. That work needs many GPUs, thousands of scored attempts, and a reward signal. Your budget is small.\n\nPPO in one idea: try an action, score it, then move the model toward better actions. Never move too far in one step. The \"clip\" in the PPO objective limits the step size. A full derivation needs policy gradients first. That is a separate lesson.\n\nCheaper ways to get better tool calls:\n- Write clear tool descriptions.\n- Put examples of correct calls in the prompt.\n- Return clear error messages, so the model can retry.\n- Log failed calls and fix the cause.\n\nExample: the model books the wrong machine. The `book_equipment` description probably does not show the machine ID format. Fix the text, not the model.\n\nI can teach tool descriptions next, which is in your mission. I can also teach PPO as an optional lesson.\n\nQuestion: which costs your team less, rewriting a tool description or training a model?",
+  "ttft_ms": 1916,
+  "type": "result",
+  "duration_ms": 14610,
+  "uuid": "4261f81d-99b9-4e47-9afa-6f2e530b5b03",
+  "ttft_stream_ms": 1553,
+  "time_to_request_ms": 76,
+  "first_content_frame_ms": 1553,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1586,
+      "cacheReadInputTokens": 59821,
+      "cacheCreationInputTokens": 20361,
+      "webSearchRequests": 0,
+      "costUSD": 0.10329809999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 586,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 20361,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-16T12:06:50.067Z"
+}

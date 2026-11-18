@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The loop (the model picks an action, the program runs it, the result comes back) is what makes a system an agent. A longer prompt or a bigger context window only changes what a single call can do."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The model only writes a structured request naming check_calendar and its arguments. The program around it runs the tool. Keep this split in mind, because it comes up again in q4 and q6."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "You picked 'no change; it will eventually fix the bug'. That is tempting, but the agent is getting the same failing result 40 times, so more steps add nothing new. A loop needs a stopping condition, such as a step limit, that ends it and hands the problem back to a person. Without one, the agent keeps spending tokens, which matters for your budget."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "4 is the right count, and your reasoning that the 4th call writes the answer is right. The part that is off is 'the model runs one tool itself'. The model only requests a tool, and the program runs it. The count works because each model call ends in one request or the final answer: 3 requests plus 1 answer. Equivalently, the model is called once per input it receives: the question and the three results."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right, and you gave both parts: the result goes back in as the next input, and the model uses it to decide its next step. Your group-chat picture fits well, since the model sees only what is in the thread. That is a good lead-in to context, which is next."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name is part of it, but the model relies on the whole tool description the program gives it: the name, what the tool does, and the parameters it takes. A name alone can mislead. For example, check_calendar does not say whether it books a slot or only reads it. This is why writing clear tool descriptions is one of your mission goals."
+    }
+  ],
+  "summary": "You have the loop down: you got q1, q2 and q5 right, and your count in q4 was correct. Two ideas to fix. First, the program runs the tools and the model only asks for them (q4). Second, the model chooses tools from their full descriptions, not just their names (q6). Also, a loop needs a stopping condition such as a step limit, because more steps do not help when the feedback never changes (q3). Next step: trace 'Is the laser cutter free tomorrow at 3 pm, and do I need training?' on paper, labelling who does each step (model or program). Then write a one-sentence description for check_calendar that says what it reads and what its parameters mean."
+}

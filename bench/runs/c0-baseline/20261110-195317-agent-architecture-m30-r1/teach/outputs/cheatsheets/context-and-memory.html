@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory in an agent</title>
+  <style>
+    body { max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem; font-family: Charter, Georgia, serif; line-height: 1.5; background: #fffdf8; color: #1f1d1a; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.4rem 0.5rem; border-bottom: 1px solid #e4dfd4; }
+    @media (prefers-color-scheme: dark) { body { background: #171614; color: #e9e5dc; } th, td { border-color: #36332e; } }
+  </style>
+</head>
+<body>
+  <h1>Context and memory in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory.html">Lesson 1</a>.</p>
+  <h2>Terms</h2>
+  <ul>
+    <li><strong>Context window:</strong> all the text the model can use for one call: system prompt, tool descriptions, conversation, and its answer. It has a token limit.</li>
+    <li><strong>Token:</strong> a small chunk of text; you pay for tokens on every call.</li>
+    <li><strong>Context rot:</strong> accuracy and recall fall as the window fills.</li>
+    <li><strong>Compaction / clearing:</strong> summarize the run, or drop old tool results, to free the window.</li>
+    <li><strong>External memory (notes):</strong> facts saved outside the window and reloaded later.</li>
+    <li><strong>Retrieval:</strong> fetching a few relevant passages from a store, up front or just in time via a tool.</li>
+  </ul>
+  <h2>Where does it live?</h2>
+  <table>
+    <tr><th>Need</th><th>Mechanism</th><th>Makerspace example</th></tr>
+    <tr><td>Within one run</td><td>The window; the program re-sends it every call</td><td>Calendar result used in the final answer</td></tr>
+    <tr><td>Across sessions</td><td>Notes in a file or database, loaded at start</td><td>Training completed, with date</td></tr>
+    <tr><td>Long documents</td><td>Retrieval tool returning a few passages</td><td>Bandsaw speed from the right manual page</td></tr>
+  </table>
+  <h2>Cost rule</h2>
+  <p>Input tokens for call n = fixed part + question + every earlier request and result. Total = the sum over all calls. A large result that arrives early is paid for by every later call.</p>
+  <p>Sources: <a href="https://anthropic.com/engineering/effective-context-engineering-for-ai-agents">Anthropic Engineering</a>, <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">Claude API docs: context windows</a>.</p>
+</body>
+</html>

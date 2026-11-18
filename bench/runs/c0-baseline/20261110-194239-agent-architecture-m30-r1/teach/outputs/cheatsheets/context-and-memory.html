@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory in an agent</title>
+  <style>
+    body { max-width: 40rem; margin: 0 auto; padding: 2rem 1rem; font-family: Charter, Georgia, serif; line-height: 1.5; color: #1f1d1a; background: #fffdf8; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-top: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.4rem 0.5rem; border-bottom: 1px solid #e4dfd4; }
+    @media (prefers-color-scheme: dark) { body { background: #171614; color: #e9e5dc; } th, td { border-color: #36332e; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context and memory in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory-in-an-agent.html">Lesson 1</a>. Source: <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Anthropic, Effective context engineering for AI agents</a>.</p>
+  <h2>Where does a piece of information live?</h2>
+  <table>
+    <thead><tr><th>Place</th><th>Lasts</th><th>Use for</th></tr></thead>
+    <tbody>
+      <tr><td>Context</td><td>One call; the program re-sends it each step</td><td>The question, tool results, what the model needs right now</td></tr>
+      <tr><td>Saved notes (store outside the model)</td><td>Across sessions, until deleted</td><td>Training status, preferences, bookings; must be saved and loaded</td></tr>
+      <tr><td>Searched documents (retrieval)</td><td>Permanent; only chosen chunks enter the context</td><td>Manuals and other large sources</td></tr>
+    </tbody>
+  </table>
+  <h2>Rules to remember</h2>
+  <ul>
+    <li>The model keeps nothing between calls; the program holds the history.</li>
+    <li>Context tokens are paid for at every call, so total cost grows with steps times context size.</li>
+    <li>More context is not free: context rot lowers recall as it grows.</li>
+    <li>Keep tool results small; clear old results; compact when needed (lossy).</li>
+    <li>Memory needs both a save step and a load step.</li>
+    <li>Retrieval: up front (program searches first) or just in time (model calls a search tool). Say "not found" rather than guess.</li>
+  </ul>
+</main>
+</body>
+</html>

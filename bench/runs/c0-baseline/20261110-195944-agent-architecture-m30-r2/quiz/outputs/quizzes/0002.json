@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "What is the key difference between a workflow and an agent?",
+      "options": [
+        {"id": "a", "text": "An agent can call tools, but a workflow can only call a model"},
+        {"id": "b", "text": "A workflow needs a smaller model, but an agent needs a larger one"},
+        {"id": "c", "text": "In a workflow, code fixes the path; in an agent, the model picks the next step"},
+        {"id": "d", "text": "An agent remembers earlier requests, but a workflow starts fresh every time"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A makerspace assistant handles every question the same way: the program searches the manuals for the question text, pastes the top three pages into a prompt, and calls the model once to write the answer. How should this design be described?",
+      "options": [
+        {"id": "a", "text": "An agent, because a language model writes the final answer"},
+        {"id": "b", "text": "A workflow, because the program fixes every step in advance"},
+        {"id": "c", "text": "An agent, because it looks up information outside the model"},
+        {"id": "d", "text": "Neither, because it makes only one call to the model"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "For a booking request, a fixed workflow always makes 2 model calls, while an agent loop averages 5 model calls. Assume every model call costs $0.01. Over 1,000 booking requests, how many more dollars does the agent cost than the workflow?",
+      "unit": "dollars"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which makerspace task is the best candidate for a fixed workflow rather than an agent?",
+      "options": [
+        {"id": "a", "text": "Finding out why a student's 3D prints keep warping, using manuals and booking history"},
+        {"id": "b", "text": "Recommending a machine for an unusual project the student describes in their own words"},
+        {"id": "c", "text": "Answering a question that may need pages from several manuals and a follow-up lookup"},
+        {"id": "d", "text": "Booking a laser cutter slot once the student has given the machine, date and time"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In a few words, what can an agent do that a fixed workflow cannot?"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "At a design review, a teammate proposes making the whole assistant one agent. Booking always follows the same three steps, but manual questions vary a lot. Which response is best supported by who owns the control flow and by cost?",
+      "options": [
+        {"id": "a", "text": "Use a fixed workflow for booking and an agent only for open-ended manual questions"},
+        {"id": "b", "text": "Use one agent for everything, since a model can follow the booking steps too"},
+        {"id": "c", "text": "Use fixed workflows for everything, since workflows are always cheaper than agents"},
+        {"id": "d", "text": "Use one agent for everything, since the booking steps then become more reliable"}
+      ]
+    }
+  ]
+}

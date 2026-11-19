@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 12175,
+  "stop_reason": "end_turn",
+  "session_id": "4fcec818-ed0f-4be3-a65a-11ee40e506b6",
+  "total_cost_usd": 0.09889730000000001,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 20190,
+    "cache_read_input_tokens": 60353,
+    "output_tokens": 1209,
+    "output_tokens_details": {
+      "thinking_tokens": 142
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20190,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 424,
+        "cache_read_input_tokens": 30540,
+        "cache_creation_input_tokens": 434,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 434
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1209,
+      "cacheReadInputTokens": 60353,
+      "cacheCreationInputTokens": 20190,
+      "webSearchRequests": 0,
+      "costUSD": 0.09889730000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 142,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 20190,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I won't derive PPO here. Training a model is outside your mission, and the derivation needs math you haven't met yet. It also isn't the right tool for your problem.\n\n**The premise:** Strong models are trained with RL, but that happens at the AI lab. You use the finished model. Training your own would need thousands of example runs, a GPU budget, and a reward signal. Your sponsor's budget is small, so it can't pay for that.\n\n**What fixes bad tool calls at your scale:**\n1. Write clear tool descriptions. Say what the tool does, when to use it, and what each argument means.\n2. Add one or two example calls to the description.\n3. Make a test set of 20 real student questions. Record which tool each one should call.\n4. Change one thing, rerun the 20 questions, and count the correct calls.\n\n**Example:** The booking tool fails when a student says \"tomorrow afternoon\". You add this line to the description: \"Dates must be YYYY-MM-DD. Ask the student if the date is unclear.\" Then you rerun your test set.\n\nThe idea behind RL is simple: try, score the result, and do more of what scored well. Your test set does the same by hand.\n\nIf you want, I can write a short lesson on how RL works, in plain words and without the math.\n\nQuestion: what would be your score for one test question about booking a laser cutter?",
+  "ttft_ms": 1807,
+  "type": "result",
+  "duration_ms": 12297,
+  "uuid": "5eac0980-1d1c-4154-a321-364781941263",
+  "ttft_stream_ms": 1465,
+  "time_to_request_ms": 61,
+  "first_content_frame_ms": 1466,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1209,
+      "cacheReadInputTokens": 60353,
+      "cacheCreationInputTokens": 20190,
+      "webSearchRequests": 0,
+      "costUSD": 0.09889730000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 142,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 20190,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-16T12:06:50.067Z"
+}

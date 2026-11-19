@@ -1,0 +1,11 @@
+{
+  "quiz": "0003",
+  "learner": "learner",
+  "answers": [
+    {"id": "q1", "response": "b"},
+    {"id": "q2", "response": "저는 너보다 더 커요"},
+    {"id": "q3", "response": "c"},
+    {"id": "q4", "response": "a"},
+    {"id": "q5", "response": "내 남동생은 재일 빨라"}
+  ]
+}

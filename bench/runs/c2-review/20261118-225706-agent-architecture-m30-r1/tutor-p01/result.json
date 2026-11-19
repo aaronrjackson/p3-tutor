@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 15074,
+  "stop_reason": "end_turn",
+  "session_id": "8c22eb0e-b05d-47e5-8633-a27d34632558",
+  "total_cost_usd": 0.0985453,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 20279,
+    "cache_read_input_tokens": 60373,
+    "output_tokens": 1138,
+    "output_tokens_details": {
+      "thinking_tokens": 214
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 20279,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 274,
+        "cache_read_input_tokens": 30550,
+        "cache_creation_input_tokens": 513,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 513
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1138,
+      "cacheReadInputTokens": 60373,
+      "cacheCreationInputTokens": 20279,
+      "webSearchRequests": 0,
+      "costUSD": 0.0985453,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 214,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 20279,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 8,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't give you the letter. Quiz 0001 isn't graded yet, so I keep its answers closed, even for practice. If I told you now, you would not learn how to find the answer yourself.\n\nI can help you get unstuck, though. Try these steps:\n\n1. Think about the agent loop from learning record 0002. The model asks for an action. The action runs. The result comes back.\n2. Ask yourself: what does the model see after each action?\n3. Ask yourself: if the model repeats the same step, what did it fail to use from the last result?\n\nWrite one sentence that says why the agent repeats itself. Then read each choice and ask which one fits your sentence. Do this for every choice, not only the first one that looks good.\n\nAfter grading, we can go through q3 together. We can also make a short lesson on it if you want.\n\nWhat is your one-sentence reason for the repeated edit?",
+  "ttft_ms": 4802,
+  "type": "result",
+  "duration_ms": 15194,
+  "uuid": "4af16914-cd00-4ba8-bdd2-e700a00d8664",
+  "ttft_stream_ms": 4450,
+  "time_to_request_ms": 81,
+  "first_content_frame_ms": 4450,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1138,
+      "cacheReadInputTokens": 60373,
+      "cacheCreationInputTokens": 20279,
+      "webSearchRequests": 0,
+      "costUSD": 0.0985453,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 214,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 20279,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-16T12:06:50.067Z"
+}

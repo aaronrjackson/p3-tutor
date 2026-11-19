@@ -1,0 +1,435 @@
+{
+  "run_id": "20261118-225706-agent-architecture-m30-r1",
+  "config": "c2-review",
+  "config_hash": "sha256:de09b5865b846359b7a989d59a8b553428567f05e307873391577ffa2c3b2fb5",
+  "topic": "agent-architecture",
+  "topic_hash": "sha256:15e7410b31c44309b8c89066f95db4318ca9706ed790aeeb431d4f1a89552410",
+  "topic_commit": "7f1451a2b93b6c357641c12f385280708ed68e37",
+  "repeat": 1,
+  "minutes": 30,
+  "quick": false,
+  "started_at": "2026-11-18T22:57:06Z",
+  "finished_at": "2026-11-18T23:03:54Z",
+  "claude_version": "2.1.327 (Claude Code)",
+  "p3_version": "0.1.0",
+  "platform": "Linux-7.2.14-arch1-1-x86_64-with-glibc2.44",
+  "model": "sonnet",
+  "allowed_tools": [
+    "Glob",
+    "Grep",
+    "WebSearch",
+    "WebFetch"
+  ],
+  "entries": {
+    "teach": "/teach",
+    "tutor": "/tutor",
+    "quiz": "/quiz",
+    "grade": "/grade"
+  },
+  "only": null,
+  "ancestor_memory": [],
+  "scenarios": [
+    {
+      "id": "teach",
+      "job": "teach",
+      "entry": "/teach",
+      "status": "ok",
+      "duration_ms": 168452,
+      "num_turns": 30,
+      "tokens": {
+        "input": 42401,
+        "output": 31174,
+        "cache_read": 519700,
+        "cache_write": 93292
+      },
+      "cost_usd_list": 0.709991,
+      "web_searches": 3,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 1,
+        "max_depth": 1,
+        "by_type": {
+          "lesson-reviewer": 1
+        }
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "RESOURCES.md",
+        "cheatsheets/context-and-memory.html",
+        "keys/0002.json",
+        "lessons/0001-context-and-memory-in-an-agent.html",
+        "quizzes/0002.json"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-haiku-5-5",
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [
+        "Anthropic effective context engineering for AI agents",
+        "Anthropic contextual retrieval RAG chunks embeddings",
+        "Claude API docs context windows memory tool"
+      ],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "quiz",
+      "job": "quiz",
+      "entry": "/quiz",
+      "status": "ok",
+      "duration_ms": 72566,
+      "num_turns": 19,
+      "tokens": {
+        "input": 16,
+        "output": 9023,
+        "cache_read": 147172,
+        "cache_write": 40129
+      },
+      "cost_usd_list": 0.252414,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 1,
+        "max_depth": 1,
+        "by_type": {
+          "quiz-reviewer": 1
+        }
+      },
+      "permission_denials": [],
+      "outputs": [
+        "keys/0002.json",
+        "quizzes/0002.json"
+      ],
+      "changed": [],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "grade-s1",
+      "job": "grade",
+      "entry": "/grade",
+      "status": "ok",
+      "duration_ms": 36813,
+      "num_turns": 4,
+      "tokens": {
+        "input": 20,
+        "output": 4867,
+        "cache_read": 189094,
+        "cache_write": 39030
+      },
+      "cost_usd_list": 0.207905,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 1,
+        "max_depth": 1,
+        "by_type": {
+          "grade-reviewer": 1
+        }
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "grades/0001-s1.json",
+        "learning-records/0003-who-runs-the-tool.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "submission": "s1",
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "grade-s2",
+      "job": "grade",
+      "entry": "/grade",
+      "status": "ok",
+      "duration_ms": 46874,
+      "num_turns": 5,
+      "tokens": {
+        "input": 24,
+        "output": 5951,
+        "cache_read": 239398,
+        "cache_write": 37026
+      },
+      "cost_usd_list": 0.219605,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 1,
+        "max_depth": 1,
+        "by_type": {
+          "grade-reviewer": 1
+        }
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md",
+        "grades/0001-s2.json",
+        "learning-records/0003-who-runs-the-tools-and-when-to-stop.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "submission": "s2",
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "tutor-p01",
+      "job": "tutor",
+      "entry": "/tutor",
+      "status": "ok",
+      "duration_ms": 15730,
+      "num_turns": 8,
+      "tokens": {
+        "input": 6,
+        "output": 1138,
+        "cache_read": 60373,
+        "cache_write": 20279
+      },
+      "cost_usd_list": 0.098545,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p01",
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "tutor-p02",
+      "job": "tutor",
+      "entry": "/tutor",
+      "status": "ok",
+      "duration_ms": 11957,
+      "num_turns": 9,
+      "tokens": {
+        "input": 6,
+        "output": 1152,
+        "cache_read": 60528,
+        "cache_write": 20327
+      },
+      "cost_usd_list": 0.098893,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p02",
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "tutor-p03",
+      "job": "tutor",
+      "entry": "/tutor",
+      "status": "ok",
+      "duration_ms": 12464,
+      "num_turns": 8,
+      "tokens": {
+        "input": 6,
+        "output": 1010,
+        "cache_read": 60283,
+        "cache_write": 20054
+      },
+      "cost_usd_list": 0.096356,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p03",
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "tutor-p04",
+      "job": "tutor",
+      "entry": "/tutor",
+      "status": "ok",
+      "duration_ms": 11741,
+      "num_turns": 8,
+      "tokens": {
+        "input": 6,
+        "output": 1101,
+        "cache_read": 60203,
+        "cache_write": 20070
+      },
+      "cost_usd_list": 0.097322,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p04",
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "tutor-p05",
+      "job": "tutor",
+      "entry": "/tutor",
+      "status": "ok",
+      "duration_ms": 12858,
+      "num_turns": 8,
+      "tokens": {
+        "input": 6,
+        "output": 1209,
+        "cache_read": 60353,
+        "cache_write": 20190
+      },
+      "cost_usd_list": 0.098897,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p05",
+      "claude_version": "2.1.327"
+    },
+    {
+      "id": "tutor-p06",
+      "job": "tutor",
+      "entry": "/tutor",
+      "status": "ok",
+      "duration_ms": 17946,
+      "num_turns": 8,
+      "tokens": {
+        "input": 6,
+        "output": 1726,
+        "cache_read": 60233,
+        "cache_write": 20696
+      },
+      "cost_usd_list": 0.106079,
+      "web_searches": 0,
+      "web_fetches": 0,
+      "subagents": {
+        "spawned": 0,
+        "max_depth": 0,
+        "by_type": {}
+      },
+      "permission_denials": [],
+      "outputs": [
+        "NOTES.md"
+      ],
+      "changed": [
+        "NOTES.md"
+      ],
+      "deleted": [],
+      "models": [
+        "claude-sonnet-5-5"
+      ],
+      "search_queries": [],
+      "fetch_urls": [],
+      "exit_code": 0,
+      "probe": "p06",
+      "claude_version": "2.1.327"
+    }
+  ],
+  "claude_versions": [
+    "2.1.327"
+  ]
+}

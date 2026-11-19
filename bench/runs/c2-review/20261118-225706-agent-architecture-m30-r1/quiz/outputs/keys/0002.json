@@ -1,0 +1,41 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "a",
+      "rationale": "In an agent the model owns the control flow: it chooses the next step at run time from what it has seen. Option b describes a workflow, where code fixes the path."
+    },
+    {
+      "id": "q2",
+      "answer": "b",
+      "rationale": "The code fixes the steps and their order, so the program owns the control flow. Using tools, a model, or the model filling in arguments does not make it an agent; the model does see the tool results, so d is false."
+    },
+    {
+      "id": "q3",
+      "answer": "The code decides; the steps are fixed in advance and the model only labels the question.",
+      "accepted": [
+        "The code",
+        "The program decides, because the path is fixed in advance",
+        "The code decides, because the model does not choose the next step"
+      ],
+      "rationale": "The program owns the control flow: the model makes one bounded decision (a label), and fixed code picks the path. An answer of 'the model' confuses using a model with letting it choose the steps."
+    },
+    {
+      "id": "q4",
+      "answer": 3,
+      "tolerance": 0,
+      "rationale": "6 calls / 2 calls = 3, so the agent costs three times as much per request. This is why a fixed workflow suits predictable steps on a small budget."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "When the number and kind of steps cannot be known in advance, the model must choose them from the results it sees, which is an agent. Fixed workflows (a, b) either waste calls or miss hard questions, and c hands the control flow to the student."
+    },
+    {
+      "id": "q6",
+      "answer": "c",
+      "rationale": "Use a fixed workflow where the steps are known (booking: cheaper, predictable, easier to test) and an agent only where the path varies (manual lookup). Option d reverses this; a and b ignore that the two parts differ, and b cannot handle an unknown number of searches."
+    }
+  ]
+}

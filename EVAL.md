@@ -157,20 +157,159 @@ Name the rounds that built this step and the inventory entries of the reviewers 
 Then the loops' design, for each of teach, quiz and grade: who reviews, what is on each reviewer's checklist and which items came from your `c1-skills` major review, how each reviewer gets a fresh context, how many passes a loop may run and what ends it early, and what each loop records.
 Then one design choice you could have made the other way, such as one reviewer against several, a cap of one pass against three, or a reviewer that edits against one that only reports, and why you chose as you did.
 
-TODO: the rounds and entries, and the design of your review loops.
+Round 1 added lesson-reviewer, and teach calls it. Round 2 added quiz-reviewer, and quiz calls it. Round 3 added grade-reviewer and grade calls it. Their inventory entries are in reviews/components.md.
+
+Each reviewer has a checklist.
+For lesson, this is:
+1. **Claims that are broader than the truth.**
+   Find every sentence that says two things mean the same, can swap places, always or never apply, or hold in every case.
+   Pay most attention to the sentences in the "Nuance" lists, because a short nuance invites a broad claim.
+   For each one, ask whether an exception or a difference in use exists.
+   Check it against a high-trust source with web search when you are not sure.
+   Report it when the claim is true only in some cases, and say what limit the sentence needs.
+2. **Facts.**
+   Check that every stated fact is true and that the cited source says it.
+   Check that every example sentence, number and term is correct.
+3. **New terms.**
+   Check that every new term, word or symbol the learner needs is defined where it first appears.
+   The learner may know nothing of the topic, so assume they know no vocabulary.
+4. **Fit to the learner.**
+   Check that the examples serve the mission in `MISSION.md`.
+For quiz, this is:
+1. **A right answer that is easy to spot.**
+   For each multiple-choice item, ask whether a learner who does not know the idea could still pick the right option.
+   Look for these signs:
+   - The right option is the most specific, the most detailed or the only one with a reason that fits the stem.
+   - The wrong options are absurd, or one wrong option has a plain flaw.
+   - The wrong options use extreme words such as "always", "never" or "only".
+   - The right option repeats words from the stem.
+   - Two wrong options are near copies, so the odd one out is right.
+   Report each item that shows a sign, and name the sign.
+2. **Items that are too simple.**
+   Check that each item asks the learner to apply the idea to a new case, not to recall a sentence from the lesson.
+   Report an item that a learner could answer by matching words from the lesson.
+   Check that at least one item stretches the learner.
+3. **Wrong options that do not teach.**
+   Each wrong option must be a real misconception that a learner could hold.
+   The key's `distractors` field must name it.
+   Report a wrong option that no learner would pick.
+4. **One defensible answer.**
+   Report an item where your own answer differed from the key, or where a careful expert could defend a second option.
+For grade, this is:
+1. **The verdict.**
+   Check that the verdict matches what the learner's response means.
+   An answer is `correct` when it means what the key means, `partial` when only part is right, and `wrong` when it misses the idea or is blank.
+   For a multiple-choice item, compare the chosen option with the key.
+   For a numeric item, use the key's tolerance.
+   Report a verdict that differs from your own.
+2. **The misconception id.**
+   Check that the id fits the response, and that it comes from the key's `distractors` or from an id the workspace already uses.
+   Check that the id is `null` for a correct answer, a slip or a blank.
+   Report an invented id or a wrong id.
+3. **What the feedback must do.**
+   - For a wrong or partial answer, it says plainly what the answer missed, gives the correct idea and why it holds, and points the learner on.
+   - For a correct answer, it says why the answer is right and reinforces the idea.
+   - It gives no praise for a wrong answer, and it may praise the part of a partial answer that is right.
+   - It is correct as a statement of fact.
+   Report feedback that fails one of these.
+4. **The summary.**
+   Check that it says what the learner has down, the one thing to work on next, and one concrete next step.
+
+A subagent starts with only its own instructions and the short task message. It doesn't have any other context. For the lesson, the message is the lesson's path and the objective. It doesn't see the writer's thinking, so it reads the draft the way a learner would.
+
+Each loop runs one review pass. Each skill says "Do not run a second review." A cap of one pass means nothing else could end it early. The reviewer returns a report of at most five findings. The writer then fixes only the flagged sentences. 
+
+I did not make any design choices myself, as the Builder made them when it acted on my rounds. One design choice I could have made is having several passes instead of one. I could've had the reviewer and writer iterate for, say, 5 iterations to truly output a much more robust and trustworthy lesson. However, this would come at the tradeoff of taking significantly longer to run as well as costing more, and this I did not believe it was worth it for the minimal gain. If I were to do this design, I could also end it early if the reviewer does not flag anything. But it would still be capped at a maximum of 5 loops to ensure it doesn't infinitely loop.
+
 
 ### The loops as they ran
 
 For teach, quiz and grade: how many review passes ran in your bench run, what the reviewers flagged, and whether the revisions moved anything you can point at, a fact corrected, an ambiguous item rewritten, feedback that changed.
 The loop records in the run's outputs are the evidence; name the files.
 
-TODO: what the review loops did in the run.
+Each did 1 review pass. Using the quiz review for an example, it ran one pass and flagged these items:
+1. q6: the stem gives away the answer. Only option c fits both halves of the stem, and options a, b and d are weak.
+2. q1, q2 and q5: the right option is easy to spot. For example, in q1 only option a names the model and repeats "decides" from the stem.
+3. q1, q2 and q4: these test recall, not application. q1 is a plain definition and q4 is arithmetic (6 divided by 2).
+The writer did act on these items, and this is evident by looking at the quiz as produced in `bench/runs/c2-review/20261118-225706-agent-architecture-m30-r1/quiz/outputs/quizzes/0002.json`.
 
 ### Your review, the objective checks and the cost
 
 Paste `uv run p3 report --configs c1-skills,c2-review`.
 
-TODO: paste the report tables.
+## Results on agent-architecture
+
+Scored full runs (quick runs and --only runs left out); each cell is the mean over the runs, with the range in brackets.
+
+### Quality
+
+| config | runs | teach facts | teach misconc. | length ratio | dead links | key agreement | wrong keys | ambiguous items | verdict agreement | false wrong | misconc. hit | leaks | behavior met |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `c1-skills` | 1 | 1.00 | 0 | 0.69 | 0 | 1.00 | 0 | 0 | 1.00 | 0.00 | 1.00 | 0 | 0.67 |
+| `c2-review` | 1 | 1.00 | 0 | 0.79 | 0 | 1.00 | 0 | 0 | 1.00 | 0.00 | 1.00 | 0 | 0.83 |
+
+Teach facts, key agreement, verdict agreement, false wrong, misconception hit and behavior met are shares (0 to 1); misconceptions, dead links, wrong keys, ambiguous items and leaks are counts per run.
+A dash means no run could be scored on that check, and n= says how many of the runs could.
+A job that failed counts against the config: no lesson scores 0 teach facts, no quiz and key 0 key agreement, a missing grades file disagrees on every item, and a tutor scenario with no reply is not met; leaks need a reply to check, so such a scenario is left out of them.
+The length ratio is a rough reading-time estimate (visible words / 150) over the minutes requested; 0.6 to 1.5 counts as on length.
+
+### Cost: teach
+
+| config | runs | tokens | output tokens | minutes | subagents | list-price $ |
+|---|---:|---:|---:|---:|---:|---:|
+| `c1-skills` | 1 | 666.9k | 33.2k | 2.9 | 2 | 0.60 |
+| `c2-review` | 1 | 686.6k | 31.2k | 2.8 | 1 | 0.71 |
+
+### Cost: quiz
+
+| config | runs | tokens | output tokens | minutes | subagents | list-price $ |
+|---|---:|---:|---:|---:|---:|---:|
+| `c1-skills` | 1 | 125.2k | 4.5k | 0.6 | 0 | 0.16 |
+| `c2-review` | 1 | 196.3k | 9.0k | 1.2 | 1 | 0.25 |
+
+### Cost: grade
+
+| config | runs | tokens | output tokens | minutes | subagents | list-price $ |
+|---|---:|---:|---:|---:|---:|---:|
+| `c1-skills` | 1 | 250.4k | 6.5k | 0.8 | 0 | 0.30 |
+| `c2-review` | 1 | 515.4k | 10.8k | 1.4 | 2 | 0.43 |
+
+### Cost: tutor
+
+| config | runs | tokens | output tokens | minutes | subagents | list-price $ |
+|---|---:|---:|---:|---:|---:|---:|
+| `c1-skills` | 1 | 486.8k | 7.6k | 1.3 | 0 | 0.59 |
+| `c2-review` | 1 | 491.0k | 7.3k | 1.4 | 0 | 0.60 |
+
+### Cost: all jobs
+
+| config | runs | tokens | output tokens | minutes | subagents | list-price $ |
+|---|---:|---:|---:|---:|---:|---:|
+| `c1-skills` | 1 | 1.53M | 51.9k | 5.6 | 2 | 1.66 |
+| `c2-review` | 1 | 1.89M | 58.4k | 6.8 | 4 | 1.99 |
+
+Costs are per run, summed over the job's scenarios; list-price $ is the list-price equivalent, not what you pay on a subscription.
+
+## Your ratings
+
+Your ratings from 1 to 5 in the major reviews (reviews/<step>.md), which review full runs on the shared topic; a dash means no rating there yet, one that p3 check does not accept, or a job that step does not review (Tutor in c2-review; Quiz, Feedback and Tutor in c3-split).
+
+| job | criterion | c1-skills | c2-review | c3-split | final |
+|---|---|---:|---:|---:|---:|
+| Lesson | Technical correctness and facts | 4 | 5 | - | - |
+| Lesson | Pedagogy | 5 | 5 | - | - |
+| Lesson | Alignment with the learning goal | 5 | 5 | - | - |
+| Lesson | Overall quality | 5 | 5 | - | - |
+| Quiz | Difficulty | 3 | 5 | - | - |
+| Quiz | Coverage of the lesson's core | 5 | 5 | - | - |
+| Quiz | Wording and possible misreadings | 5 | 5 | - | - |
+| Quiz | Writing quality | 5 | 5 | - | - |
+| Quiz | Alignment with the learning goal | 5 | 5 | - | - |
+| Feedback | Useful | 5 | 5 | - | - |
+| Feedback | Explains enough | 5 | 5 | - | - |
+| Feedback | Personalized to how I like things explained | 5 | 5 | - | - |
+| Tutor | Guardrails | 5 | - | - | - |
+| Tutor | Personalization | 5 | - | - | - |
 
 ### What the step bought and what it cost
 
@@ -178,7 +317,7 @@ Did the problems your `c1-skills` review found go away, and which ratings moved?
 Which loop earned its cost and which did not?
 If a loop ran several passes and the final output was no better than the first draft, say so, because that is the finding.
 
-TODO: your judgment of step 2.
+While the few problems that the c1-skills review did go away, it was at the cost of a higher cost overall ($1.66 for c1-skills vs $1.99 for c2-skills). The problems were very minor and small in my opinion, and does not justify the 33 cent higher cost. Not to also mention the longer processing times too.
 
 ---
 

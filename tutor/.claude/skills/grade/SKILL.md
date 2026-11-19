@@ -28,8 +28,11 @@ Tell them kindly that you grade only a complete submission.
 
 1. Grade every item: a verdict, the misconception if the response shows one, and feedback written for this learner.
 2. Write `grades/NNNN-sN.json` exactly as `FORMATS.md` shows.
-3. Write a learning record for what the grades show, as `.claude/skills/teach/references/LEARNING-RECORD-FORMAT.md` says, and update `NOTES.md`.
-4. Finish with the summary and the one next step.
+3. Review the grades once: start the `grade-reviewer` subagent with the paths of the grades file, the quiz, its key and the submission, and wait for its report before you go on.
+   For each finding, change only the flagged item or sentence in the grades file, with the smallest fix that keeps the feedback's style, and leave everything else as it is.
+   Do not run a second review.
+4. Write a learning record for what the grades show, as `.claude/skills/teach/references/LEARNING-RECORD-FORMAT.md` says, and update `NOTES.md`.
+5. Finish with the summary and the one next step.
 
 ## Feedback on a wrong or partial answer
 

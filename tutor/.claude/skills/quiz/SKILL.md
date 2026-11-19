@@ -30,7 +30,11 @@ If the request above is empty, the request is the learner's latest message.
 4. Answer every item yourself from its stem alone.
    Rewrite any item that lacks a single defensible answer.
 5. Cut every item to its shortest form, as the next section says.
-6. Finish with a short message that the quiz is ready.
+6. Review the quiz once: start the `quiz-reviewer` subagent with the paths of the quiz and its key, and wait for its report before you go on.
+   For each finding, change only the flagged item, in the quiz and in the key, with the smallest fix that keeps the style and the length limits below.
+   Leave every other item as it is.
+   Do not run a second review.
+7. Finish with a short message that the quiz is ready.
    Never put an answer in the message.
 
 ## Keep every item short

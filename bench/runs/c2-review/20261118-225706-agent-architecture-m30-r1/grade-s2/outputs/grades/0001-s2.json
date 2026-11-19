@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The loop is the structure: the model picks an action, the program runs it, and the result comes back. A longer prompt or a bigger model changes what one call can do, but not this structure."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The model only writes a request that names the tool and gives the arguments. The program runs check_calendar. You fixed this since your first attempt."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "Wrong. You chose to let the agent run longer. The agent gets the same failing result each time, so more steps add nothing. An agent needs a stopping condition, such as a step limit that ends the loop and reports what happened. Think of a person who pushes a locked door 40 times: push 41 will not open it."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "Your number, 4, is right: three tool requests plus one final answer. Your reason is wrong, though. The model does not run any tool. It only requests one. The program runs each tool and sends the result back, and each result starts a new model call."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. You gave both parts: the result goes back as the next input, and the model uses it to decide its next step. The group-chat comparison is good: each reply is a new message the model reads before its next turn."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The name is part of what the model sees, so you are partly right. But the name alone is not enough. The model also reads a description of what the tool does and the parameters it takes. A name alone can mislead: a tool named check_calendar might also book slots. The description tells the model what the tool really does."
+    }
+  ],
+  "summary": "You have the loop down: you got q1, q2 and q5 right, and your q2 answer is better than in your first attempt. The one thing to fix: the program runs the tools, not the model (q4). Next step: trace the laser-cutter request on paper again. Mark each model call and each tool run, and mark who does each one."
+}

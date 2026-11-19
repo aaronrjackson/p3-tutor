@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: where a fact lives in an agent</title>
+  <style>
+    body { max-width: 44rem; margin: 0 auto; padding: 2rem 1rem; font-family: Georgia, serif; line-height: 1.5; background: #fffdf8; color: #1f1d1a; }
+    h1 { font-size: 1.6rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    th, td { text-align: left; vertical-align: top; padding: 0.4rem; border-bottom: 1px solid #e4dfd4; }
+    @media (prefers-color-scheme: dark) { body { background: #171614; color: #e9e5dc; } th, td { border-color: #36332e; } }
+  </style>
+</head>
+<body>
+  <h1>Cheat sheet: where a fact lives in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory-in-an-agent.html">Lesson 1</a>. Three questions: Is it needed on every call? Is it long, and only a part is needed? Does it last beyond a session?</p>
+  <table>
+    <tr><th>Place</th><th>Use for</th><th>Cost</th><th>Risk</th></tr>
+    <tr><td>Context (system prompt)</td><td>Short rules, needed every call</td><td>Tokens on every call</td><td>Rot and cost if too long</td></tr>
+    <tr><td>Database + tool</td><td>Exact facts that last: training, bookings</td><td>Tokens only when read</td><td>Stale data</td></tr>
+    <tr><td>Retrieval</td><td>Long manuals; a few chunks per question</td><td>Tokens for the chunks</td><td>Wrong or missed chunk</td></tr>
+    <tr><td>Notes</td><td>Low-risk facts learned in chat</td><td>Tokens when loaded</td><td>Model writes them wrongly</td></tr>
+  </table>
+  <h2>Rules</h2>
+  <ul>
+    <li>The model keeps nothing between calls. The program re-sends the history.</li>
+    <li>Cost of a request is the sum of every call's whole context.</li>
+    <li>Keep tool results short. Drop or summarize old ones.</li>
+    <li>If the answer is not in the context, the model cannot use it. Check what retrieval returned first.</li>
+  </ul>
+</body>
+</html>

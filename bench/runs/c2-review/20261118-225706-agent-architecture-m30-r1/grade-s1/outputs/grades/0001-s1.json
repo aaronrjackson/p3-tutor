@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s1",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The loop is what makes a system an agent: the model picks an action, the program runs it, and the result comes back. A longer prompt or a bigger model changes one call, not the structure."
+    },
+    {
+      "id": "q2",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Wrong. You picked the option where the model opens the booking system itself. The model only writes text. Here, that text is a request that names check_calendar, with the laser cutter and tomorrow's date as arguments. The program around the model runs the tool. Reread the part of the lesson that shows who does what in one tool call."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The agent repeats itself, so more steps add nothing. A step limit ends the loop and hands the problem to a person. A larger window does not help, because all 40 steps already fit."
+    },
+    {
+      "id": "q4",
+      "verdict": "wrong",
+      "misconception": "M4",
+      "feedback": "Wrong. You answered 1, as if the model runs the three tools itself in one call. The program runs the tools. The model is called once for each input it gets: the question and three tool results. That gives 4 calls: three tool requests and one final answer. Trace this run again and mark each model call."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "Right: the program sends the result back to the model. You did not say why. The model needs the result in its next input, so it can choose its next step or write the final answer. Add the \"why\" to every answer like this."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": "M3",
+      "feedback": "Right: the model gets a list of tools, each with a name and a short description, and it picks the one that fits. The last sentence is wrong. The model does not remember earlier sessions on its own. Each call starts with only the text it is given, so a memory must be stored and given back by the program. We cover this next, in context and memory."
+    }
+  ],
+  "summary": "You know the loop and when to stop it (q1, q3). You also know that the model chooses a tool from its descriptions (q6). The idea to fix is who runs the tool: the program runs it, and the model only writes a request (q2, q4). Also, the model has no memory across sessions unless the program supplies it (q6). Next step: trace the laser cutter request on paper, and write who does each step: model or program."
+}

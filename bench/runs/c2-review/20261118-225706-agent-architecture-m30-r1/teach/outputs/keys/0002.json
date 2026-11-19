@@ -1,0 +1,42 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The model keeps nothing between sessions; it sees only the text the program sends in each call. With nothing stored, the allergy is gone. Option a shows the belief that the model remembers (M3), and option b mixes up the size limit of a call with storage across sessions (M7).",
+      "distractors": {"a": "M3", "b": "M7", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 3000,
+      "tolerance": 0,
+      "rationale": "Each call re-reads the whole history. Call 1 reads 400, call 2 reads 400 + 600 = 1,000, and call 3 reads 400 + 1,200 = 1,600. The total is 400 + 1,000 + 1,600 = 3,000. An answer of 1,600 counts only the last call, and 1,600 is the size of the final context, not the total read."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Anything in the context is read, and paid for, on every call, and a very full context can be used less well (context rot). Retrieval puts only the matching passages in. Option c mixes up context with storage, and the other options are false.",
+      "distractors": {"c": "M7"}
+    },
+    {
+      "id": "q4",
+      "answer": "Check what the search returned: if the passage with the setting was not retrieved, the model could not see it.",
+      "accepted": [
+        "Look at the retrieved chunks, because the right chunk may never have reached the context",
+        "Check whether the search found the right chunk, since the model only sees what retrieval puts in the context",
+        "Print the retrieved passages to see if the setting was in them"
+      ],
+      "rationale": "Full credit names the retrieval result (the chunks in the context) as the first check and gives the reason: the model sees only what retrieval returns. Blaming the model first, or saying the model should read the whole manual, shows M8. Naming the check without the reason is partial."
+    },
+    {
+      "id": "q5",
+      "answer": "In a database or official record that a tool reads, because training status must be exact and trusted, and a note the model wrote can be wrong or unsourced.",
+      "accepted": [
+        "In a database record, because a model-written note can be mistaken and safety status must be exact",
+        "In the official training record read by a tool; notes are for low-risk facts, and the model might write it wrongly"
+      ],
+      "rationale": "Full credit gives a stored, official record (database) that a tool reads, plus the reason a note is poor: it is written by the model, so it can be wrong, and safety facts must be exact. Saying only 'database' is partial. Saying to keep it in the model or the system prompt is wrong (M3)."
+    }
+  ]
+}

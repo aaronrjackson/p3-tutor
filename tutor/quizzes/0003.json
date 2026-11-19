@@ -1,0 +1,54 @@
+{
+  "id": "0003",
+  "objective": "O1",
+  "title": "Korean comparisons from zero",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O1",
+      "stem": "Which Korean sentence means \"The orange is more expensive than the apple\"? Words: 오렌지 = orange, 사과 = apple, 비싸요 = is expensive, 보다 = than, 더 = more, 제일 = the most.",
+      "options": [
+        {"id": "a", "text": "사과는 오렌지보다 더 비싸요"},
+        {"id": "b", "text": "오렌지는 사과보다 더 비싸요"},
+        {"id": "c", "text": "오렌지는 보다 사과 더 비싸요"},
+        {"id": "d", "text": "오렌지는 사과보다 제일 비싸요"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O1",
+      "stem": "Write this sentence in Korean: \"I am bigger than you.\" Use the polite style. Words: 저 = I (polite), 너 = you, 커요 = is big, 보다 = than, 더 = more, 는/은 = topic marker."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O1",
+      "stem": "Which Korean sentence means \"The apple is the tastiest\"? Words: 사과 = apple, 맛있어요 = is tasty, 보다 = than, 더 = more, 제일 = the most.",
+      "options": [
+        {"id": "a", "text": "사과는 더 맛있어요"},
+        {"id": "b", "text": "사과보다 제일 맛있어요"},
+        {"id": "c", "text": "사과는 제일 맛있어요"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O1",
+      "stem": "One sentence below breaks a rule of Korean comparisons. Which one? Words: 그 = he, 형 = older brother, 지수 = Jisu, 저 = I, 친구 = friend, 남동생 = younger brother, 빨라요 = is fast, 커요 = is big, 예뻐요 = is pretty, 덜 = less.",
+      "options": [
+        {"id": "a", "text": "그는 형보다 제일 빨라요"},
+        {"id": "b", "text": "지수는 저보다 더 커요"},
+        {"id": "c", "text": "친구는 지수보다 더 예뻐요"},
+        {"id": "d", "text": "남동생은 저보다 덜 빨라요"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O1",
+      "stem": "Write this sentence in Korean: \"My younger brother is the fastest.\" Use the polite style. Words: 남동생 = younger brother, 빨라요 = is fast, 제일 = the most, 가장 = the most, 는/은 = topic marker."
+    }
+  ]
+}

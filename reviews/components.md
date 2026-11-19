@@ -53,3 +53,30 @@ An example of a finished entry:
 - With and without: reviews/c1-skills.md, Round 6 (without) and the major review (with)
 - Review: Pretty much unchanged.
 - Kept in final: TODO
+
+### lesson-reviewer
+
+- Kind: subagent
+- Step added: c2-review
+- Purpose: Reviews the lesson produced and independently verifies what it says as being true, well worded, and taught in a manner that works for the user. It is a subagent because it needs to be done independently without bias, and subagents do not get that previous context.
+- With and without: reviews/c2-review.md, Round 1 (without) and Round 2 (with)
+- Review: It fixed minor issues with correctness, like not mentioning any nuance with 이/가 vs 은/는. However, otherwise it appeared mostly unchanged (because the rest was okay).
+- Kept in final: TODO
+
+### quiz-reviewer
+
+- Kind: subagent
+- Step added: c2-review
+- Purpose: Reviews the quiz produced and independently verifies what it says as being true, well worded and not too long or difficult or easy. It is a subagent because it needs to be done independently without bias, and subagents do not get that previous context.
+- With and without: reviews/c2-review.md, Round 2 (without) and Round 3 (with)
+- Review: Questions were made a little more difficult, but not too difficult. The perfect sweetspot now.
+- Kept in final: TODO
+
+### grade-reviewer
+
+- Kind: subagent
+- Step added: c2-review
+- Purpose: Reviews the feedback produced and independently verifies what it says as being true, well worded, and short, and friendly to the user. It is a subagent because it needs to be done independently without bias, and subagents do not get that previous context.
+- With and without: reviews/c2-review.md, Round 3 (without) and the major review (with)
+- Review: Pretty much unchanged.
+- Kept in final: TODO

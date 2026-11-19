@@ -115,9 +115,12 @@ Read `references/LESSONS.md` and `references/lesson-template.html`, then the tit
    Add the sources to `RESOURCES.md` in the format in `references/RESOURCES-FORMAT.md`.
 3. **Plan to the minutes:** split the lesson into sections with a word budget for each, as `references/LESSONS.md` explains, so the whole lesson fits the requested length.
 4. **Write the lesson** to `lessons/NNNN-<slug>.html`, following `FORMATS.md` and the template: beautiful and self-contained, with figures, worked examples, practice with immediate feedback, and citations.
-5. **Write a short quiz and its key** on the lesson's objective, in the same pass: four or five items, as `references/QUIZZES.md` describes, none of them a repeat of the lesson's practice questions.
-6. **Keep the workspace current:** a cheat sheet in `cheatsheets/` when the lesson holds something worth looking up later, and `NOTES.md` for anything you learned about the learner.
-7. **Finish** with a short message: the lesson's path and what it covers, that a quiz is ready when they are, and a reminder that they can ask you anything about it.
+5. **Review the lesson once:** start the `lesson-reviewer` subagent with the lesson's path and the objective, and wait for its report before you go on.
+   For each finding, change only the flagged sentence, with the smallest fix that keeps the lesson's style, and leave everything else as it is.
+   Do not run a second review.
+6. **Write a short quiz and its key** on the lesson's objective, in the same pass: four or five items, as `references/QUIZZES.md` describes, none of them a repeat of the lesson's practice questions.
+7. **Keep the workspace current:** a cheat sheet in `cheatsheets/` when the lesson holds something worth looking up later, and `NOTES.md` for anything you learned about the learner.
+8. **Finish** with a short message: the lesson's path and what it covers, that a quiz is ready when they are, and a reminder that they can ask you anything about it.
    Never put a quiz answer in the message.
 
 ## Quiz

@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student tells the makerspace assistant, \"I am allergic to acrylic dust.\" On Wednesday the same student opens a new chat session. The team stored nothing from Monday. What does the model know about the allergy on Wednesday?",
+      "options": [
+        {"id": "a", "text": "It knows, because the model keeps every chat it has had"},
+        {"id": "b", "text": "It knows, because the context window is large enough"},
+        {"id": "c", "text": "It knows nothing, because the program did not send it"},
+        {"id": "d", "text": "It knows a little, because the system prompt kept it"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "One request uses 3 model calls. The start of the context (rules, tool descriptions and question) is 400 tokens. Each tool result is 600 tokens. Call 1 has no tool result, call 2 follows one tool result, and call 3 follows two. Ignore the model's own output. How many tokens does the model read in total over all 3 calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "The assistant must answer questions from 30 machine manuals, about 6,000 pages in all. A teammate proposes to paste all 30 manuals into the context for every question, because the model's window is big enough. What is the strongest objection?",
+      "options": [
+        {"id": "a", "text": "Every call would pay for every page, and the model may use it badly"},
+        {"id": "b", "text": "A model cannot read text that a person wrote for other people"},
+        {"id": "c", "text": "The manuals would be lost at the end of each request"},
+        {"id": "d", "text": "A large context makes the model refuse to call any tools"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In a retrieval system for the manuals, the model answers \"the manual does not say\" about a setting that is printed in the manual. In one sentence, what is the first thing to check, and why?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your team wants the assistant to know that a student passed 3D-printer safety training. In one or two sentences, say where to store this fact, and why an agent-written note is a poor choice for it."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "quiz": "0003",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. The orange costs more, so 오렌지는 is the topic. The apple takes 보다: 사과보다. Remember this check: the topic is always the side that has more when you use 더."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct, and you wrote it from memory. 저는 is the topic, 너보다 has 보다 attached with no space, and 커요 stays in its sentence form. That is the full pattern."
+    },
+    {
+      "id": "q3",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. 제일 goes before the adjective and no 보다 appears. Option a would only mean 'tastier', and it needs a second thing to compare with."
+    },
+    {
+      "id": "q4",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Right. 그는 형보다 제일 빨라요 joins 보다 with 제일. A 'the most' sentence compares with a whole group, so it does not pair 보다 with one named thing."
+    },
+    {
+      "id": "q5",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "The pattern is right: 내 남동생은 is the topic, 제일 sits before the adjective, and there is no 보다. Two details are wrong. First, you wrote 재일, but the word is 제일 (jeil). Check the first vowel: 제, not 재. Second, the question asked for the polite style, and the polite form is 빨라요. You left off the 요. The full answer is 내 남동생은 제일 빨라요."
+    }
+  ],
+  "summary": "You have the core pattern down. You scored 4 full marks, and you wrote the comparative in q2 from memory with no errors. The one thing to fix is accuracy in small details when you write Korean yourself: the spelling of 제일 and the polite ending 요. Next step: write three sentences of your own, such as 'Coffee is more expensive than tea' and 'My friend is the biggest'. Then check each one for the 요 ending and the spelling of every word."
+}

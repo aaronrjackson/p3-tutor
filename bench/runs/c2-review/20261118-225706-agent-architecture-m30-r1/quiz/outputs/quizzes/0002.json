@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In an agent, as opposed to a workflow, what decides which step happens next?",
+      "options": [
+        {"id": "a", "text": "The model decides at run time, based on what it has seen so far"},
+        {"id": "b", "text": "The programmer's code fixes the order of the steps before the program runs"},
+        {"id": "c", "text": "The user approves each step before the program moves on to the next one"},
+        {"id": "d", "text": "The model decides, but only from a fixed script written beforehand"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking request in your assistant runs the same code path: check_calendar, then book_machine if free, then send a confirmation. The model only fills in the machine and date. What is this?",
+      "options": [
+        {"id": "a", "text": "An agent, because it calls tools and uses a language model"},
+        {"id": "b", "text": "A workflow, because the code fixes the steps and their order"},
+        {"id": "c", "text": "An agent, because the model fills in the tool arguments"},
+        {"id": "d", "text": "A workflow, because the model never sees any tool results"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A program sends each question to the model once to label it \"manual\" or \"booking\", then runs fixed code for that label. Who decides the next step after the label, and why is this a workflow?"
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A fixed workflow makes exactly 2 model calls per request. An agent on the same requests averages 6 model calls. Each call costs the same. How many times more does the agent cost per request?",
+      "unit": "times"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Manual questions vary: some need one page, others need several searches across machines, and you cannot know how many beforehand. Which design fits these questions best?",
+      "options": [
+        {"id": "a", "text": "A workflow with three fixed searches, since every question needs similar work"},
+        {"id": "b", "text": "A workflow with one search, since most questions need one page"},
+        {"id": "c", "text": "A workflow that asks the student to pick each search by hand"},
+        {"id": "d", "text": "An agent, since the number of searches depends on what each returns"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Booking steps are known, and a wrong booking is costly. Manual lookup needs an unknown number of searches. Which design is the best argument at your design review?",
+      "options": [
+        {"id": "a", "text": "One agent for both, with a human confirming each booking"},
+        {"id": "b", "text": "One workflow for everything, so the cost stays fully predictable"},
+        {"id": "c", "text": "A fixed workflow for booking and an agent for manual lookup"},
+        {"id": "d", "text": "An agent for booking and a fixed workflow for manual lookup"}
+      ]
+    }
+  ]
+}

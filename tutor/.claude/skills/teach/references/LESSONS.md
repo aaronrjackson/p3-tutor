@@ -45,7 +45,9 @@ When no length is asked for, use the one `PREFERENCES.md` implies, or 15 minutes
 5. **Worked example, then practice:** a worked example step by step, then a similar task for the learner with the steps faded, and the solution on demand.
 6. **Summary:** the key ideas in three to five lines, and a prompt to explain the main idea in their own words before moving on.
 7. **Go further:** the primary source, the single most high-quality, high-trust resource you found, to read or watch next; two to four other sources you cited; and a community where they can test the skill (see Wisdom below).
-8. **Closing:** a reminder that they can ask you follow-up questions in the chat about anything unclear, and that a short quiz on this lesson is ready when they are.
+8. **End of the page:** the lesson ends after "Go further".
+   The page is a website, not a chat window, so it holds no closing note that invites questions or mentions a quiz.
+   Say those things in your chat message instead.
 
 ## Knowledge and skills
 
@@ -118,4 +120,4 @@ Check the lesson once against this list, and fix anything that fails:
 - The length is near the budget, judging by your section plan.
 - Every external link came from this session's search results or fetched pages.
 - The practice questions are not the quiz items, and the lesson gives away no quiz answer.
-- The lesson opens with the win and closes with the primary source and the reminder to ask you questions.
+- The lesson opens with the win and ends with the primary source, and holds no note that invites questions in the chat or mentions a quiz.

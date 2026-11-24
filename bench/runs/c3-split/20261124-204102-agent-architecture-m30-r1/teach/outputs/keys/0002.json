@@ -1,0 +1,36 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": 3300,
+      "tolerance": 0,
+      "rationale": "Call 1 sends 600 tokens. Call 2 sends the history again plus 500 new tokens: 1,100. Call 3 sends 1,100 + 500 = 1,600. Total: 600 + 1,100 + 1,600 = 3,300. An answer of 1,600 counts only the last call and shows the idea that the model keeps earlier steps itself, so they are not sent again."
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "A session's context is gone when it ends. Only facts the program saves and loads again can reach the next session. A larger window (a) and an instruction to remember (b) do not save anything, and the model cannot keep its context after the session (d).",
+      "distractors": {"a": "M3", "b": "M3", "d": "M3"}
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "The chunk lost its meaning when it was cut out of the manual. Tagging each chunk with the machine and section restores it. Shorter chunks (c) lose more context, sending a whole manual (b) undoes the point of retrieval, and returning one chunk (d) does not fix a chunk that is wrong or unclear."
+    },
+    {
+      "id": "q4",
+      "answer": "The page stays in the history, and the program sends the whole history again at every later call, so you pay for it at each step.",
+      "accepted": [
+        "It stays in the context and is sent again with every later model call, so it is paid for each time.",
+        "Because the history is resent at each step, the page is part of the input of every later call."
+      ],
+      "rationale": "Full credit needs both parts: the result stays in the history, and the history is sent again at every later call, so it is paid for each time. Saying only that tool results are long or costly is partial. Saying the model remembers the page itself, so it is not resent, is wrong."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "Each model call sends the full history again, so manual text in the context is sent and paid for at every step. Retrieval keeps only the best chunks in. A window that is large enough does hold the manuals (a), the manuals would be sent again in a new session if the program wanted (b), and retrieval is not the only way, only the cheaper one (c)."
+    }
+  ]
+}

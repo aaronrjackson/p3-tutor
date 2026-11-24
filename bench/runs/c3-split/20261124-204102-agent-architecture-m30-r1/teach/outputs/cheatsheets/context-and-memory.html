@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory in an agent</title>
+  <style>
+    :root { --bg:#fffdf8; --text:#1f1d1a; --muted:#6b665e; --rule:#e4dfd4; --accent:#9a4517; }
+    @media (prefers-color-scheme: dark) { :root { --bg:#171614; --text:#e9e5dc; --muted:#a49e93; --rule:#36332e; --accent:#eaa77a; } }
+    body { margin:0; background:var(--bg); color:var(--text); font-family: Charter, Georgia, serif; line-height:1.5; }
+    main { max-width:44rem; margin:0 auto; padding:2rem 1.25rem; }
+    h1 { font-size:1.6rem; } h2 { font-size:1.1rem; margin-top:1.75rem; color:var(--accent); }
+    table { width:100%; border-collapse:collapse; font-size:0.92rem; }
+    th, td { text-align:left; vertical-align:top; padding:0.4rem 0.5rem; border-bottom:1px solid var(--rule); }
+    th { font-family: system-ui, sans-serif; font-size:0.75rem; text-transform:uppercase; color:var(--muted); }
+    @media print { :root { --bg:#fff; --text:#000; --accent:#000; } main { max-width:none; padding:0; } }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Context and memory in an agent</h1>
+  <p>From <a href="../lessons/0001-context-and-memory.html">Lesson 1</a>. Token numbers are illustrations.</p>
+
+  <h2>Terms</h2>
+  <table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td>Token</td><td>A small piece of text: a word, part of a word, or a character. About 3 to 4 English characters.</td></tr>
+    <tr><td>Context window</td><td>All the tokens the model can use in one call, reply included. Rules, tools, messages and tool results all count.</td></tr>
+    <tr><td>Stateless</td><td>The model keeps nothing between calls. The program sends the full history each time.</td></tr>
+    <tr><td>Session</td><td>One conversation. Its context is gone at the end.</td></tr>
+    <tr><td>Memory / note</td><td>Facts the program saves outside the context and loads back in.</td></tr>
+    <tr><td>Chunk, index, retrieval</td><td>A small piece of a document; a prepared list for fast search; searching chunks and returning the best few.</td></tr>
+  </table>
+
+  <h2>Cost rule</h2>
+  <p>Tokens sent in total = the sum of the input of every call. Old text is sent again at every later call, so a long tool result costs once per remaining step.</p>
+
+  <h2>Three questions: where does it go?</h2>
+  <ol>
+    <li>Needed at every step? Then it goes in the context (keep it short).</li>
+    <li>Does it last past this session? Then it goes in saved notes.</li>
+    <li>Too long to carry? Then it goes in a searchable store; only the best chunks enter the context.</li>
+  </ol>
+
+  <h2>Makerspace assistant</h2>
+  <table>
+    <tr><th>Information</th><th>Place</th></tr>
+    <tr><td>Assistant's rules</td><td>Context, every step</td></tr>
+    <tr><td>This question and tool results</td><td>Context, trimmed after use</td></tr>
+    <tr><td>Training status</td><td>Saved notes (and the program's own check), loaded at session start</td></tr>
+    <tr><td>Machine manuals</td><td>Searchable store, best chunks only</td></tr>
+    <tr><td>Booking calendar</td><td>Read with a tool when needed</td></tr>
+  </table>
+
+  <h2>Watch for</h2>
+  <ul>
+    <li>Memory is not automatic: the program saves and loads it.</li>
+    <li>A bigger window does not mean "send everything": cost grows and recall can drop.</li>
+    <li>Retrieval can return the wrong chunk. Tag chunks with machine and section. Test with real questions.</li>
+  </ul>
+</main>
+</body>
+</html>

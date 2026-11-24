@@ -1,0 +1,110 @@
+{
+  "duration_api_ms": 140269,
+  "stop_reason": "end_turn",
+  "session_id": "ded0f1c4-0a22-4fae-9733-37f63b7503ac",
+  "total_cost_usd": 0.3552306,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 4234,
+    "cache_read_input_tokens": 80381,
+    "output_tokens": 2435,
+    "output_tokens_details": {
+      "thinking_tokens": 599
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4234,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 282,
+        "cache_read_input_tokens": 41002,
+        "cache_creation_input_tokens": 2611,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2611
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 24,
+      "outputTokens": 8961,
+      "cacheReadInputTokens": 242461,
+      "cacheCreationInputTokens": 62645,
+      "webSearchRequests": 0,
+      "costUSD": 0.3552306,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2816,
+      "cacheCreationEphemeral5mInputTokens": 6169,
+      "cacheCreationEphemeral1hInputTokens": 56476,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "origin": {
+    "kind": "task-notification",
+    "producer": "session-task",
+    "runId": "0mwv984yw-277af6b0"
+  },
+  "subagent_stats": {
+    "spawned": 1,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 1
+    },
+    "started_in_background": 1,
+    "max_depth": 1,
+    "spawned_by_subagents": 0,
+    "completed": 1,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {
+      "quiz-reviewer": 1
+    }
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 7,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Quiz 0002 is ready. It has six questions on O4 (workflows versus agents): four multiple-choice and two short-answer. The quiz is in `quizzes/0002.json` and the key is in `keys/0002.json`.\n\n- **No lesson yet:** No lesson on O4 exists, so I wrote the quiz as a check of the objective itself. It runs ahead of the lessons.\n- **Review fixes:** I ran the reviewer once and changed the answer options on q2, q4 and q5, with matching key rationales.\n- **Not applied:** I left q1 as it was, because I judged the review's \"too simple\" note a minor point. I did not add `distractors` to the key, because `FORMATS.md` says not to invent misconception ids and the existing ids don't fit these options. I also did not make the q4 mixed-case change the reviewer suggested.",
+  "ttft_ms": 5822,
+  "type": "result",
+  "duration_ms": 15811,
+  "uuid": "3a43c782-0246-4d9d-bef2-aa548cb014ca",
+  "ttft_stream_ms": 1391,
+  "time_to_request_ms": 20,
+  "first_content_frame_ms": 1391,
+  "queued_turn_count": 0,
+  "result_index": 1,
+  "model_usage_since_last_result": {},
+  "credential_expires_at": "2026-12-16T12:06:50.067Z"
+}

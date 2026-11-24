@@ -113,14 +113,24 @@ Read `references/LESSONS.md` and `references/lesson-template.html`, then the tit
    When no length is asked for, use the one `PREFERENCES.md` implies, or 15 minutes, declare it in `p3-minutes`, and say in your message that the learner can ask for a shorter or longer lesson.
 2. **Find the knowledge:** search the web for high-trust sources on exactly this objective, read the best two or three, and choose the single best one as the lesson's primary source.
    Add the sources to `RESOURCES.md` in the format in `references/RESOURCES-FORMAT.md`.
-3. **Plan to the minutes:** split the lesson into sections with a word budget for each, as `references/LESSONS.md` explains, so the whole lesson fits the requested length.
-4. **Write the lesson** to `lessons/NNNN-<slug>.html`, following `FORMATS.md` and the template: beautiful and self-contained, with figures, worked examples, practice with immediate feedback, and citations.
-5. **Review the lesson once:** start the `lesson-reviewer` subagent with the lesson's path and the objective, and wait for its report before you go on.
+3. **Plan to the minutes:** start the `planner` subagent with the objective and its id, the requested length in minutes, the win and where the learner starts, and wait for its report before you go on.
+   It writes `drafts/plan.md`: the sections, a word budget for each, and the reading and practice time of each.
+4. **Find the references:** start the `references-finder` subagent with the path `drafts/plan.md` and the objective, and wait for its report before you go on.
+   It writes `drafts/sources.md`: a checked source for each claim in the plan, the primary source and a community.
+   Add the sources to `RESOURCES.md` in the format in `references/RESOURCES-FORMAT.md`.
+5. **Write the lesson** to `lessons/NNNN-<slug>.html`, following `drafts/plan.md`, `FORMATS.md` and the template: beautiful and self-contained, with figures, worked examples, practice with immediate feedback, and citations.
+   Cite each claim with its link from `drafts/sources.md`, copied exactly, and link no other page.
+   Use the primary source and the community from `drafts/sources.md` in "Go further".
+   Keep the plan's sections, their order and their word budgets, and write each section to its budget.
+6. **Draw the figures:** start the `figure-designer` subagent with the lesson's path, and wait for its report before you go on.
+   It changes only the figures in the lesson file.
+   Do not change the rest of the lesson, and do not redraw the figures yourself.
+7. **Review the lesson once:** start the `lesson-reviewer` subagent with the lesson's path and the objective, and wait for its report before you go on.
    For each finding, change only the flagged sentence, with the smallest fix that keeps the lesson's style, and leave everything else as it is.
    Do not run a second review.
-6. **Write a short quiz and its key** on the lesson's objective, in the same pass: four or five items, as `references/QUIZZES.md` describes, none of them a repeat of the lesson's practice questions.
-7. **Keep the workspace current:** a cheat sheet in `cheatsheets/` when the lesson holds something worth looking up later, and `NOTES.md` for anything you learned about the learner.
-8. **Finish** with a short message: the lesson's path and what it covers, that a quiz is ready when they are, and a reminder that they can ask you anything about it.
+8. **Write a short quiz and its key** on the lesson's objective, in the same pass: four or five items, as `references/QUIZZES.md` describes, none of them a repeat of the lesson's practice questions.
+9. **Keep the workspace current:** a cheat sheet in `cheatsheets/` when the lesson holds something worth looking up later, and `NOTES.md` for anything you learned about the learner.
+10. **Finish** with a short message: the lesson's path and what it covers, that a quiz is ready when they are, and a reminder that they can ask you anything about it.
    Never put a quiz answer in the message.
 
 ## Quiz

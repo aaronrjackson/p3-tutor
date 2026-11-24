@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 12209,
+  "stop_reason": "end_turn",
+  "session_id": "4aa51023-69f8-467b-90c1-a2e7942b58ac",
+  "total_cost_usd": 0.1034501,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 21018,
+    "cache_read_input_tokens": 62261,
+    "output_tokens": 1314,
+    "output_tokens_details": {
+      "thinking_tokens": 344
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 21018,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 298,
+        "cache_read_input_tokens": 31430,
+        "cache_creation_input_tokens": 599,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 599
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1314,
+      "cacheReadInputTokens": 62261,
+      "cacheCreationInputTokens": 21018,
+      "webSearchRequests": 0,
+      "costUSD": 0.1034501,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 344,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 21018,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I can't confirm answers to a quiz that isn't graded yet. This is true even if your TA said it's fine. I won't confirm, rule out or rank any choice. That would defeat the purpose of the quiz, which is to show what you can do on your own. Please check with your TA directly if you want to be sure about the rule.\n\nHere is what I can do:\n\n- You said you are \"pretty sure\". That is a good start. Check your reason, not only your pick.\n- Write the reason in one or two short sentences. Use your own words.\n- Test it with the agent loop you already know: the model asks for an action, the action runs, the result comes back, and the loop repeats until done. Does your reason fit that picture?\n- If you can't state a reason, that tells you what to review.\n\nAfter the quiz is graded, I will go through q2 with you. We can look at every choice and why it is right or wrong.\n\nYour turn: in one sentence, why are you sure about your pick?",
+  "ttft_ms": 1536,
+  "type": "result",
+  "duration_ms": 12390,
+  "uuid": "d59c43ed-7759-4780-8cb4-40c937709453",
+  "ttft_stream_ms": 1000,
+  "time_to_request_ms": 115,
+  "first_content_frame_ms": 1000,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1314,
+      "cacheReadInputTokens": 62261,
+      "cacheCreationInputTokens": 21018,
+      "webSearchRequests": 0,
+      "costUSD": 0.1034501,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 344,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 21018,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-12-16T12:06:50.067Z"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In an agent, what decides which tool is called next?",
+      "options": [
+        {"id": "a", "text": "The program's code, which runs the tools in an order the developer set"},
+        {"id": "b", "text": "The model, which picks the next tool from the results so far"},
+        {"id": "c", "text": "The user, who chooses each next tool from a menu at every step"},
+        {"id": "d", "text": "The tool descriptions, which fix the order in which the tools run"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking request needs the same steps in the same order: check the calendar, check training, then book. Which design fits best?",
+      "options": [
+        {"id": "a", "text": "An agent, because a model should confirm each step is still needed"},
+        {"id": "b", "text": "A fixed workflow, because the model must pick which tool comes first"},
+        {"id": "c", "text": "An agent, because bookings change the calendar and need judgment"},
+        {"id": "d", "text": "A fixed workflow, because the order is known before the request arrives"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In a fixed workflow, who decides the order of the steps, and when is it decided?"
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Student requests need anywhere from one tool call to eight, and nothing predicts which. Which design fits best?",
+      "options": [
+        {"id": "a", "text": "An agent, because the model can choose how many steps each request needs"},
+        {"id": "b", "text": "A fixed workflow, because every request must pass through the same steps"},
+        {"id": "c", "text": "A fixed workflow, because it handles unusual requests more cheaply"},
+        {"id": "d", "text": "A fixed workflow, because it can retry a failed step on its own"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your budget is small, and one part of the assistant always follows the same path. Why is a fixed workflow usually the better choice there?",
+      "options": [
+        {"id": "a", "text": "It keeps the model out of tool results, so answers are always correct"},
+        {"id": "b", "text": "It uses a smaller model per step, so each call costs less"},
+        {"id": "c", "text": "No model call is spent on choosing steps, so cost is predictable"},
+        {"id": "d", "text": "It calls tools in parallel, so each request finishes sooner"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A Python script calls the model to read a manual page, then always runs check_calendar, then calls the model again. Is this a workflow or an agent, and why?"
+    }
+  ]
+}

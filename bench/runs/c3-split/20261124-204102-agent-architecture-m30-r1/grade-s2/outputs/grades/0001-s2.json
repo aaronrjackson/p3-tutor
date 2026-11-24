@@ -1,0 +1,43 @@
+{
+  "quiz": "0001",
+  "submission": "s2",
+  "items": [
+    {
+      "id": "q1",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. A loop is the part that makes a system an agent: the model picks an action, the program runs it, and the result comes back. A longer prompt or a bigger model only changes what one call can do."
+    },
+    {
+      "id": "q2",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. The model only writes a request that names the tool and gives the arguments. The program around the model runs check_calendar. Keep this idea: it matters for the next quiz."
+    },
+    {
+      "id": "q3",
+      "verdict": "wrong",
+      "misconception": "M6",
+      "feedback": "You chose to let the agent run longer. This is wrong. The agent gets the same failing result each time, so more steps add nothing new. It is a tempting idea because a loop feels like it must finish at some point, but it can repeat forever. A step limit stops the loop and reports what happened, so a person can step in."
+    },
+    {
+      "id": "q4",
+      "verdict": "partial",
+      "misconception": "M4",
+      "feedback": "Your number is right: 4 model calls. Your reason is wrong. The model does not run the tools. It only asks for one tool each time it is called, and the program runs it. The 4 calls are the question plus the three tool results, each one given to the model as new input."
+    },
+    {
+      "id": "q5",
+      "verdict": "correct",
+      "misconception": null,
+      "feedback": "Correct. You gave both parts: the result goes back in as the next input, and the model uses it to decide its next step. Your group chat comparison works well. One detail to add: the program also calls the model again, and that call gives the model its next turn."
+    },
+    {
+      "id": "q6",
+      "verdict": "partial",
+      "misconception": null,
+      "feedback": "You are right that the name helps the model. But the name alone is not enough. The model also reads a description of what the tool does and what parameters it takes. The program gives these to the model. A vague name could mislead the model."
+    }
+  ],
+  "summary": "You know the loop and what the model outputs when it picks a tool (q1, q2, q5). The one idea to work on is a stopping condition: more steps do not fix a repeated failure, so a loop needs a limit (q3). Next step: for the makerspace assistant, write down one stopping rule, such as a step limit, and say what the program does when it is reached."
+}

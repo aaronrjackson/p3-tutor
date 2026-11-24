@@ -80,3 +80,24 @@ An example of a finished entry:
 - With and without: reviews/c2-review.md, Round 3 (without) and the major review (with)
 - Review: Pretty much unchanged.
 - Kept in final: TODO
+
+### figure-designer
+
+- Kind: subagent
+- Step added: c3-split
+- With and without: reviews/c3-split.md, Round 1 (without) and Round 2 (with)
+- Kept in final: TODO
+
+### planner
+
+- Kind: subagent
+- Step added: c3-split
+- With and without: reviews/c3-split.md, Round 3 (without) and Round 4 (with)
+- Kept in final: TODO
+
+### references-finder
+
+- Kind: subagent
+- Step added: c3-split
+- With and without: reviews/c3-split.md, Round 4 (without) and Round 5 (with)
+- Kept in final: TODO

@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your assistant sends the full history at every model call. The first call sends 600 tokens. After each tool call, the history grows by 500 tokens (the tool request plus its result). The model makes two tool calls, then writes its final answer, so it is called three times. Ignoring the tokens the model writes, how many input tokens are sent in total across the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Sam tells your assistant on Monday that he prefers morning slots. On Thursday he opens a new chat, and the assistant has no idea. Which change to the program makes it know on Thursday?",
+      "options": [
+        {"id": "a", "text": "Switch to a model whose context window is ten times larger"},
+        {"id": "b", "text": "Add a rule telling the model to remember every student"},
+        {"id": "c", "text": "Save a short note after each session and load it at the start"},
+        {"id": "d", "text": "Ask the model to keep its Monday context until Sam returns"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student asks about the drill press. The search returns a chunk that reads only: \"Remove the guard, then set the tension to level 4.\" It comes from the band saw manual, but the model treats it as drill press advice. Which fix is best?",
+      "options": [
+        {"id": "a", "text": "Add the machine name and section to each chunk before indexing"},
+        {"id": "b", "text": "Send the full band saw manual with every later question instead"},
+        {"id": "c", "text": "Make each chunk shorter so that it holds fewer unclear words"},
+        {"id": "d", "text": "Return only one chunk so that the model gets less to confuse"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences: a tool returns a 5,000-token manual page at step 2 of a five-step request. Why do you pay for those tokens more than once?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A teammate says: \"The new model's window is large enough for all four machine manuals, so we will put them all in the context at every step.\" What is the main problem with this plan for your budget?",
+      "options": [
+        {"id": "a", "text": "A model cannot read four manuals within a single request"},
+        {"id": "b", "text": "The manuals would be lost when the session ends"},
+        {"id": "c", "text": "Retrieval is the only way to give a model manuals"},
+        {"id": "d", "text": "The manual tokens are sent and paid for at every step"}
+      ]
+    }
+  ]
+}

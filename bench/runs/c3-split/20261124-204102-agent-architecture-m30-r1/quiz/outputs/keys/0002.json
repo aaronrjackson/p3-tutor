@@ -1,0 +1,47 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "In an agent, the model owns the control flow: it chooses the next action from the results so far. Option a describes a workflow, where the developer's code owns the order. The user (c) and the tool descriptions (d) do not set the order."
+    },
+    {
+      "id": "q2",
+      "answer": "d",
+      "rationale": "When the steps and their order are known in advance, a fixed workflow does the job with no model decisions about control flow. The agent options give weak reasons: known steps need no model to confirm them (a) or to judge them (c), and in a workflow the code, not the model, picks the first tool (b)."
+    },
+    {
+      "id": "q3",
+      "answer": "The developer decides, in code, before any request runs.",
+      "accepted": [
+        "The developer, in advance",
+        "The programmer, when writing the code",
+        "The code decides, fixed in advance",
+        "The developer, at design time",
+        "The program's code, decided before the request"
+      ],
+      "rationale": "In a workflow the code owns the control flow, and the developer fixes the order at design time. Answering that the model decides shows the agent definition applied to a workflow."
+    },
+    {
+      "id": "q4",
+      "answer": "a",
+      "rationale": "When the number and kind of steps vary and cannot be predicted, the model's ability to choose the next step is worth its cost, so an agent fits. A fixed path (b) cannot suit unpredictable requests, a fixed workflow does not handle unusual requests well (c), and retrying a step is not what separates a workflow from an agent (d)."
+    },
+    {
+      "id": "q5",
+      "answer": "c",
+      "rationale": "In a fixed workflow the code chooses the steps, so no model calls are spent on deciding what to do next, and cost and behavior are easier to predict. A workflow does not guarantee correct answers (a), model size is a separate choice (b), and parallel tool calls are not what defines a workflow (d)."
+    },
+    {
+      "id": "q6",
+      "answer": "A workflow: the code fixes the order of the steps, not the model.",
+      "accepted": [
+        "Workflow, because the order is set in the code",
+        "Workflow, because the script decides the steps, not the model",
+        "A workflow, because the control flow is fixed in advance by the developer"
+      ],
+      "rationale": "Calling the model does not make a system an agent. The script always runs the same steps in the same order, so the code owns the control flow: a workflow. Answering agent because it calls a model and a tool is the common error."
+    }
+  ]
+}
